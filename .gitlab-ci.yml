@@ -4,5 +4,9 @@ stages:
 build:
   stage: build
   image: mosstech/ci-tools:latest
+  before_script:
+  - curl -sLo hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_0.83.1_Linux-64bit.tar.gz
+  - tar -xzf hugo.tar.gz && mv hugo /usr/local/bin/ && rm -f LICENSE README.md hugo.tar.gz
   script:
-  - echo "The build stage is coming, run for your lives"
+  - mkdir -p ../app/www
+  - cd src/ && hugo --source .
