@@ -1,0 +1,18 @@
+
+name = "runbooks"
+license = "MIT"
+description = "Documentation theme for hosting Runbooks using Hugo, heavily based on Grav Learn theme"
+homepage = "https://gitlab.com/alexos-dev/runbooks"
+repo = "https://gitlab.com/alexos-dev/runbooks"
+tags = ["documentation", "doc", "search"]
+features = ["documentation", "search"]
+min_version = 0.82
+
+[author]
+  name = "Alex Moss"
+  homepage = "https://alexos.dev/"
+
+[original]
+  name = "Hugo Learn Theme"
+  homepage = "https://github.com/matcornic/hugo-theme-learn"
+  repo = "https://github.com/matcornic/hugo-theme-learn"

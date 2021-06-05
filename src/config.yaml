@@ -1,0 +1,40 @@
+title: "Runbooks"
+languageCode: "en-gb"
+enableEmoji: true 
+enableGitInfo: true
+
+# CI build makes assumptions that these are not changed
+publishDir: "../app/www"
+contentDir: "../content"
+
+# enables search
+outputs:
+  home:
+  - "HTML"
+  - "RSS"
+  - "JSON"
+
+# Heavily based on https://github.com/matcornic/hugo-theme-learn, with tweaks
+theme: "runbooks"
+
+# See: https://learn.netlify.com/en/basics/configuration/
+params:
+  editURL: "https://gitlab.com/alexos-dev/runbooks/tree/master/content/"
+  commitURL: "https://gitlab.com/alexos-dev/runbooks/commit/"
+  author: "<<<your-team>>>"
+  description: "Operational Runbooks for <<<your thing>>>"
+  showVisitedLinks: false
+  disableSearch: false
+  disableAssetsBusting: false
+  ordersectionsby: "weight"
+  
+menu:
+  shortcuts:
+  - name: "<i class='fab fa-gitlab'></i> Git Repo"
+    url: "https://gitlab.com/alexos-dev/runbooks/"
+    weight: 10
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

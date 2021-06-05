@@ -1,0 +1,7 @@
+{
+    "default": true,
+    "no-bare-urls": false,
+    "line-length": false,
+    "single-h1": false,
+    "no-trailing-punctuation": false
+}
