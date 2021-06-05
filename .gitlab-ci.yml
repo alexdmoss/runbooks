@@ -1,0 +1,8 @@
+stages:
+- build
+
+build:
+  stage: build
+  image: mosstech/ci-tools:latest
+  script:
+  - echo "The build stage is coming, run for your lives"
