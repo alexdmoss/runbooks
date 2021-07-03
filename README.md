@@ -4,6 +4,10 @@ A template site for hosting service runbooks, using a modified version of the [H
 
 ---
 
+## Installation
+
+Most things are handled via CI, but the domain registration requires a bit of manual _(I think, I've never looked too closely at automating this)_ site verification. This is straight-forward - the required TXT record is set for `alexos.dev`, verified [here](https://www.google.com/webmasters/verification/verification?domain=alexos.dev) to allow this command to succeed: `gcloud app domain-mappings create runbooks.alexos.dev`.
+
 ## Things To Customise
 
 - Stuff in `./content/` is where your main content goes, of course. It can also be used to override things like your favicon, logo, etc.

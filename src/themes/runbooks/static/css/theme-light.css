@@ -107,10 +107,10 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     box-shadow: inset 0 1px 3px rgba(0,0,0,.06),0 0 5px rgba(0,169,218,.7)
 }
 #header-wrapper {
-    background: #1c90f3;
+    background: lightgray;
     color: #fff;
     text-align: center;
-    border-bottom: 4px solid #33a1ff;
+    border-bottom: 4px solid darkgray;
     padding: 1rem;
 }
 #header a {
@@ -127,7 +127,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     margin-top: 1rem;
     position: relative;
     border: 1px solid #33a1ff;
-    background: #167ad0;
+    background: #1a8fbb;
     border-radius: 4px;
 }
 .searchbox label {
@@ -315,7 +315,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     padding: 4px 0;
 }
 #sidebar ul li.visited > a .read-icon {
-    color: #167ad0;
+    color: #1a8fbb;
     display: inline;
 }
 #sidebar ul li li {
@@ -608,8 +608,6 @@ section.attachments.grey label {
 section.attachments.grey .attachments-files {
     background: #f4f4f4;
 }
-
-/* Children shortcode */
 
 /* Children shortcode */
 .children p {
@@ -1131,7 +1129,7 @@ pre .copy-to-clipboard:hover {
     text-align: right;
 }
 #sidebar ul li.visited > a .read-icon {
-    color: #00bdf3;
+    color: #1a8fbb;
     display: inline;
 }
 
