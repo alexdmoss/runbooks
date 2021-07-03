@@ -9,7 +9,7 @@ build:
   stage: build
   image: mosstech/ci-tools:latest
   rules:
-  - if: $CI_COMMIT_BRANCH == "main@alexos-dev/runbooks"
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   before_script:
   - curl -sLo hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_0.83.1_Linux-64bit.tar.gz
   - tar -xzf hugo.tar.gz && mv hugo /usr/local/bin/ && rm -f LICENSE README.md hugo.tar.gz
@@ -25,6 +25,6 @@ deploy:
   dependencies:
   - build
   rules:
-  - if: $CI_COMMIT_BRANCH == "main@alexos-dev/runbooks"
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   script:
   - ./deploy.sh
