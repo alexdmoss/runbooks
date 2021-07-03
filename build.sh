@@ -6,19 +6,22 @@ if [[ -z ${HOSTNAME:-} ]]; then echo "Hostname not set"; exit 1; fi
 
 function main() {
 
-    pushd "$(dirname "${BASH_SOURCE[0]}")/app" >/dev/null
 
     echo "-> [INFO] Building runbooks site ..."
 
+    pushd "$(dirname "${BASH_SOURCE[0]}")/src" >/dev/null
     mkdir -p ../app/www
-    cd src/ && hugo --source .
-
+    hugo --source .
+    popd >/dev/null
+    
     echo "-> [INFO] Checking expected HTML files rendered ..." 
 
+    pushd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null
+    
     markdown_files=$(find content -type f -name '*.md')
 
     for md_file in ${markdown_files}; do
-    
+
         html_path=$(dirname "${md_file}" | sed 's#^content#app/www#')
 
         if [[ $(basename "${md_file}") == "_index.md" ]]; then
