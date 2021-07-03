@@ -11,13 +11,12 @@ Most things are handled via CI, but the domain registration requires a bit of ma
 ## Things To Customise
 
 - Stuff in `./content/` is where your main content goes, of course. It can also be used to override things like your favicon, logo, etc.
-- Slack Channel Link: `./src/themes/runbooks/layouts/partials/menu-footer.html`
 - Google Analytics Tag (if you wish!): `./src/themes/runbooks/layouts/partials/custom-footer.html`
 
 ## To Do
 
 - [x] Strip out unnecessary features / streamline
-- [ ] Get it up and running somewhere
+- [x] Get it up and running somewhere
 - [ ] Grab some content from work runbooks and redact
 - [ ] Page to showcase features - and update Theme README to link to these
   - [ ] Markdown

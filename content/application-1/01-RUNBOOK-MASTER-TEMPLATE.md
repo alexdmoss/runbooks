@@ -4,7 +4,7 @@ menuTitle: "Template: Runbook"
 ---
 
 {{% notice note %}}
-A default template to use with runbooks to help with consistency and inspiration on what to include
+A default template to use with runbooks to help with consistency, as well as inspiration on what to include
 {{% /notice %}}
 
 ---

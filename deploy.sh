@@ -31,8 +31,6 @@ function main() {
         echo "-> [INFO] Test PASSED - HTTP response code was ${response_code}"
     fi
     
-    popd >/dev/null
-
 }
 
 main "${@:-}"
