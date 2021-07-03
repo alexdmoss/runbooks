@@ -1,0 +1,24 @@
+public/
+exampleSite/public
+
+.terraform
+*.tfplan
+*.tfstate
+*.tfstate.backup
+
+*.iml
+*.DS_Store
+*.swp
+
+**/public/**
+**/www/**
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+**/out
+/target/
+
+.vscode
