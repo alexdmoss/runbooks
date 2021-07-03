@@ -1,0 +1,12 @@
+<!-- credit to https://github.com/jcyrss https://discourse.gohugo.io/t/include-an-md-file/1702/14 -->
+{{ $file := .Get 0  }}
+
+{{ if strings.HasSuffix $file ".html" }}
+
+{{  $file  | readFile  | safeHTML }}
+
+{{ else if strings.HasSuffix $file ".md" }}
+
+{{  $file  | readFile  | markdownify  }}
+
+{{ end }}
