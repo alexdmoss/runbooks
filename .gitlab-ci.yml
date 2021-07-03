@@ -26,5 +26,7 @@ deploy:
   - build
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  before_script:
+  - echo "${GOOGLE_CREDENTIALS}" | gcloud auth activate-service-account --key-file -
   script:
   - ./deploy.sh
