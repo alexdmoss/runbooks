@@ -3,7 +3,7 @@ stages:
 - deploy
 
 variables:
-  HOSTNAME: https://runbooks.alexos.dev
+  HOSTNAME: runbooks.alexos.dev
 
 build:
   stage: build
