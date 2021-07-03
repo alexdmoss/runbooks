@@ -1,6 +1,6 @@
 runtime: python37
 
-service: runbooks
+service: default
 
 handlers:
 - url: /
