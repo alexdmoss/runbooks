@@ -19,7 +19,8 @@ function main() {
     pushd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null
     
     markdown_files=$(find content -type f -name '*.md')
-
+    error=0
+    
     for md_file in ${markdown_files}; do
 
         html_path=$(dirname "${md_file}" | sed 's#^content#app/www#')
