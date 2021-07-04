@@ -19,12 +19,13 @@ Most things are handled via CI, but the domain registration requires a bit of ma
 - [x] Get it up and running somewhere
 - [ ] Grab some content from work runbooks and redact
 - [ ] Page to showcase features - and update Theme README to link to these
-  - [ ] Markdown
+  - [x] Markdown
   - [ ] Nested nav
-  - [ ] Image options
+  - [x] Image options
   - [ ] git snippets
   - [ ] screen cap
-  - [ ] Mermaid
+  - [x] Mermaid
 - [ ] Dark mode switching needs a look - base on Principles site instead
 - [ ] All the CSS files ...
 - [ ] Simplify some of the things to customise so all in one place - e.g. Slack Channel link
+- [ ] GitInfo per page
