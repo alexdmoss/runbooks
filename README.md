@@ -27,5 +27,5 @@ Most things are handled via CI, but the domain registration requires a bit of ma
   - [x] Mermaid
 - [ ] Dark mode switching needs a look - base on Principles site instead
 - [ ] All the CSS files ...
-- [ ] Simplify some of the things to customise so all in one place - e.g. Slack Channel link
 - [ ] GitInfo per page
+- [ ] Alternate fonts

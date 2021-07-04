@@ -1,6 +1,7 @@
 ---
-title: "examples"
+title: "Examples"
 chapter: true
+alwaysopen: true
 ---
 
 ## Example Usage
