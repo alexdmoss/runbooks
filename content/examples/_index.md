@@ -2,6 +2,7 @@
 title: "Examples"
 chapter: true
 alwaysopen: true
+weight: 1
 ---
 
 ## Example Usage

@@ -4,7 +4,7 @@ title: Markdown Syntax
 
 {{% notice note %}}
 Tweaked after copying from https://learn.netlify.com/en/cont/markdown/ which is itself taken from http://learn.getgrav.org/content/markdown.
-{{% /notice%}}
+{{% /notice %}}
 
 See Table of Contents (next to the breadcrumb navigation at the top) to jump to the relevant section.
 
@@ -12,11 +12,9 @@ See Table of Contents (next to the breadcrumb navigation at the top) to jump to 
 
 ## Why Markdown?
 
-Let's face it: Writing content for the Web is tiresome. WYSIWYG editors help alleviate this task, but they generally result in horrible code, or worse yet, ugly web pages.
+Basically, it's quick and simple to write, using simple syntax that is easily converted into something that's straight-forward to read and navigate. It also becomes straight to store, compare and change over time.
 
-**Markdown** is a better way to write **HTML**, without all the complexities and ugliness that usually accompanies it.
-
-Some of the key benefits are:
+In comparison to something like authoring in HTML, some of the key benefits are:
 
 1. Markdown is simple to learn, with minimal extra characters so it's also quicker to write content.
 2. There are less chance of errors when writing in markdown due to the simple syntax.
@@ -27,9 +25,15 @@ This site uses Hugo to render, which in recent versions uses the [Goldmark](http
 
 ---
 
+{{% notice tip %}}
+What follows are examples of how the most common markdown syntax is styled by this site, so you can more easily select/copy what you need
+{{% /notice %}}
+
+---
+
 ## Headings
 
-Headings from `h1` through `h6` are constructed with a `#` for each level:
+Headings from `h1` through `h5` are constructed with a `#` for each level:
 
 ```markdown
 # h1 Heading

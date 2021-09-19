@@ -2,6 +2,10 @@
 title: "Tips & Tricks"
 ---
 
+{{% notice tip %}}
+Here we are sharing some tips n tricks specific to using this site and its theme - i.e. not just standard Markdown stuff, but the things that are little bit extra!
+{{% /notice%}}
+
 ## Ordering Sections
 
 Use the `weight:` property to control the order of things - in `_index.md` this will affect the sections, in pages it will affect the order within the section.
@@ -111,7 +115,7 @@ Here is some additional text hidden behind an expansion dropdown
 
 ## Flowcharts, Simple Diagrams, etc
 
-It is possible to draw simple diagrams, like Flowcharts, Sequence Diagrams and good ol' GANTT charts if you desire, using the Mermaid plugin. Rather than reproduce the guide here, see this page for more detail on how: https://learn.netlify.com/en/shortcodes/mermaid/. 
+It is possible to draw simple diagrams, like Flowcharts, Sequence Diagrams and good ol' GANTT charts if you desire, using the Mermaid plugin. Rather than reproduce the guide here, see [this page](https://learn.netlify.com/en/shortcodes/mermaid/) for more detail on how.
 
 Their first example to confirm it works is shown here:
 
