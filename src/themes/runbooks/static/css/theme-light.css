@@ -15,32 +15,34 @@
 .button:active, .button-secondary:active {
     margin: 2px 0 -2px 0;
 }
-/* Body Font */
+
 @font-face { 
-    font-family: 'Exo2'; 
-    src: url('../fonts/Exo2-Light.ttf') format('truetype'); 
-    font-weight: normal; 
-    font-style: normal; 
+    font-family: 'Body-Font'; 
+    src: url('../fonts/WorkSans-VariableFont_wght.ttf');
+	font-weight: 100 1000;
+	font-stretch: 25% 151%;
 }
-/* Bold Font */
+
 @font-face { 
-    font-family: 'Exo2'; 
-    src: url('../fonts/Exo2-SemiBold.ttf') format('truetype'); 
-    font-weight: bold; 
-    font-style: normal; 
+    font-family: 'Body-Font'; 
+    src: url('../fonts/WorkSans-Italic-VariableFont_wght.ttf');
+	font-weight: 100 1000;
+	font-stretch: 25% 151%;
+    font-style: italic;
 }
+
 @font-face { 
-    font-family: 'Exo2'; 
-    src: url('../fonts/Exo2-SemiBoldItalic.ttf') format('truetype'); 
-    font-weight: bold; 
-    font-style: italic; 
+    font-family: 'Heading-Font'; 
+    src: url('../fonts/Oxanium-VariableFont_wght.ttf');
+	font-weight: 400 1000;
+	font-stretch: 25% 151%;
 }
-/* Heading Font */
+
 @font-face { 
-    font-family: 'Quicksand'; 
-    src: url('../fonts/Quicksand-Regular.ttf') format('truetype'); 
-    font-weight: normal; 
-    font-style: normal; 
+    font-family: 'Code-Font'; 
+    src: url('../fonts/FiraCode-VariableFont_wght.ttf');
+	font-weight: 100 1000;
+	font-stretch: 25% 151%;
 }
 
 body {
@@ -432,7 +434,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     max-width: 80%;
 }
 #chapter h3 {
-    font-family: "Quicksand", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Heading-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     font-weight: 300;
     /* text-align: center; */
 }
@@ -461,20 +463,20 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 }
 
 body {
-    font-family: "Exo2", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Body-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     font-weight: 300;
     line-height: 1.6;
     font-size: 16px !important;
 }
 h2, h3, h4, h5, h6 {
-    font-family: "Quicksand", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Heading-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     text-rendering: optimizeLegibility;
     color: #5e5e5e;
     font-weight: 200;
     letter-spacing: -1px;
 }
 h1 {
-    font-family: "Quicksand", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Heading-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     text-align: center;
     /* text-transform: uppercase; */
     color: #222;
@@ -635,7 +637,7 @@ section.attachments.grey .attachments-files {
 }
 
 code, kbd, pre, samp {
-    font-family: "Consolas", menlo, monospace;
+    font-family: "Code-Font", menlo, monospace;
     font-size: 92%;
 }
 code {
@@ -813,7 +815,7 @@ td {
     z-index: 1000000;
     display: none;
     padding: 5px 8px;
-    font: normal normal 11px/1.5 "Exo2", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font: normal normal 11px/1.5 "Body-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -1020,7 +1022,6 @@ td {
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 70%;
-    display: inline-block;
     float: left;
 }
 #body #breadcrumbs span {
@@ -1134,7 +1135,7 @@ pre .copy-to-clipboard:hover {
 }
 
 #sidebar #shortcuts h3 {
-    font-family: "Quicksand", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Heading-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     color: white ;
     margin-top:1rem;
     padding-left: 1rem;

@@ -15,17 +15,8 @@ Most things are handled via CI, but the domain registration requires a bit of ma
 
 ## To Do
 
-- [x] Strip out unnecessary features / streamline
-- [x] Get it up and running somewhere
-- [ ] Grab some content from work runbooks and redact
 - [ ] Page to showcase features - and update Theme README to link to these
-  - [x] Markdown
-  - [ ] Nested nav
-  - [x] Image options
   - [ ] git snippets
   - [ ] screen cap
-  - [x] Mermaid
 - [ ] Dark mode switching needs a look - base on Principles site instead
-- [ ] All the CSS files ...
-- [ ] GitInfo per page
-- [ ] Alternate fonts
+- [ ] All the CSS files

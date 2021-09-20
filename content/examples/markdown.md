@@ -12,7 +12,7 @@ See Table of Contents (next to the breadcrumb navigation at the top) to jump to 
 
 ## Why Markdown?
 
-Basically, it's quick and simple to write, using simple syntax that is easily converted into something that's straight-forward to read and navigate. It also becomes straight to store, compare and change over time.
+Basically, it's quick and simple to write, using simple syntax that is easily converted into something that's straight-forward to read and navigate. It also becomes straight-forward to store, compare and change over time.
 
 In comparison to something like authoring in HTML, some of the key benefits are:
 
