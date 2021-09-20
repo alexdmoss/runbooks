@@ -11,7 +11,7 @@ This app is also business critical, so includes a bit more detail on the process
 
 ---
 
-# Service: Browse
+# Service: Application-2
 
 ## Team Details
 
@@ -34,13 +34,13 @@ Follow this decision flow in order to manage the triggered incident. Acknowledge
 
 1. [#topic-major-incident-comms](#the-slack-channel)
 2. [#topic-ops-bridge](#the-slack-channel)
-3. [#team-digital-platform](#the-slack-channel)
+3. [#team-platform](#the-slack-channel)
 
 **If a major incident hasn't already been triggered, and you think it is required trigger it before doing anything else.**
 
 **Trigger it immediately using the 'run a play' button on the PagerDuty Incident.**
 
-![decision process](./images/incident-decision-process.png)
+> Diagram of incident decision process was here - removed
 
 ## Useful Support Links
 

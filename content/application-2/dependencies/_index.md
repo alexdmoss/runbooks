@@ -5,7 +5,7 @@ chapter: true
 
 ## Dependencies  
 
-### Browse is Dependent on
+### Application-2 is Dependent on
 
  | Application          | Detail                         | Runbook (will inc. how to contact                | Golden Signals Dashboard                           |
 | --------------------- | ------------------------------ | ------------------------------------------------ | ------------------------------ |
@@ -14,7 +14,7 @@ chapter: true
 | upstream dependency 3 | something about what this does | [link to their runbook](https://link/to/runbook) | [link to their 4 Golden Signal Dashboard](https://link/to/grafana/) |
 | upstream dependency 4 | something about what this does | [link to their runbook](https://link/to/runbook) | [link to their 4 Golden Signal Dashboard](https://link/to/grafana/) |
 
-## Services Dependent on Browse
+## Services Dependent on Application-2
 
 | Service                 | Detail                       | Runbook                                          |
 | ----------------------- | ---------------------------- | ------------------------------------------------ |

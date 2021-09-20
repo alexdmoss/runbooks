@@ -1,11 +1,11 @@
 ---
-title: "Browse - Alerts"
+title: "Alerts"
 chapter: true
 ---
 
-## Browse - Alerts
+## Alerts
 
-The alerts configured to Browse are the standard alerts provided by default by the platform.
+The alerts configured to Application-2 are the standard alerts provided by default by the platform.
 
 More information about monitoring and alerts can be found [here](https://link/to/more/docs)
 
@@ -13,11 +13,15 @@ More information about monitoring and alerts can be found [here](https://link/to
 
 These alerts are the predefined ones for any service on PLATFORM_NAME. If they are not required, or if you wish to vary the alerting criteria necessary to trigger them, you can edit the [service definition base yaml](https://link/to/config/in/git) and create some **microservice_alert_overrides** for the relevant microservice(s).
 
-### slo-browse.prod-browse.5xx-errors
+---
 
-Check new [5xx Alert page](/application-2/alerts/slo-browse.prod-browse.5xx-errors/)
+### slo-application-2.prod-browse.5xx-errors
 
-### slo-browse.prod-browse.service-availability
+Check new [5xx Alert page](/application-2/alerts/slo-application-2.prod-browse.5xx-errors/)
+
+---
+
+### slo-application-2.prod-browse.service-availability
 
 **Summary:** Service pods are not available
 
@@ -29,7 +33,9 @@ Check new [5xx Alert page](/application-2/alerts/slo-browse.prod-browse.5xx-erro
 - Check for other alerts in PagerDuty that may be linked - the issue may be out of our control. In particular, look at Platform and AN_OTHER_DEPENDENCY, as well as #topic-major-incidents in Slack.
 - A recent release may have caused an issue - consider a rollback to the previous version.
 
-### slo-browse.prod-browse.pod-oom-kills
+---
+
+### slo-application-2.prod-browse.pod-oom-kills
 
 **Summary:** The service's pods have restarted as they have run out of memory - the number of pods and resources should be re-evaluated.
 
@@ -43,7 +49,9 @@ Check new [5xx Alert page](/application-2/alerts/slo-browse.prod-browse.5xx-erro
 - Consider either scaling up number of pods or increasing memory for pods.
 - A release may have significantly degraded performance and spinning up more pods may fix it temporarily. Consider a rollback to the previous release.
 
-### slo-browse.prod-browse.zero-traffic
+---
+
+### slo-application-2.prod-browse.zero-traffic
 
 **Summary:** Service pods are not handling traffic.
 

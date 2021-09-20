@@ -1,34 +1,34 @@
 ---
-title: "slo-browse.prod-browse.5xx-errors"
+title: "slo-application-2.prod-browse.5xx-errors"
 chapter: true
 ---
 
-# PagerDuty Error: slo-browse.prod-browse.5xx-errors
+# PagerDuty: slo-application-2.prod-browse.5xx-errors
 
-## Summary: The Service is generating 5xx errors
+**Summary:** The Service is generating 5xx errors
 
-## Customer Impact: Errors
+**Customer Impact:** Errors
 
-## Actions:
+**Actions:**
 
-### Is there a bigger issue?
+## Is there a bigger issue?
 
 Join and check the following channels
 
 - [#topic-major-incident-comms](https://link/to/slack)
 - [#topic-ops-bridge](https://link/to/slack)
-- [#team-digital-platform](https://link/to/slack)
+- [#team-platform](https://link/to/slack)
 
 Read and gain and understand what is happening so you have context, if there is a major incident(MI) in progress. Participate and add relevant notes, e.g.
-`Browse received a 5xx alert at xx:xx`
+`Application-2 received a 5xx alert at xx:xx`
 
-If there is no MI, keep investigating the Browse issue.
+If there is no MI, keep investigating the Application-2 issue.
 
-You will need to determine if Browse is the cause of the problem or suffering symptoms because of a dependency issue.
+You will need to determine if Application-2 is the cause of the problem or suffering symptoms because of a dependency issue.
 
-### Checking Browse
+## Checking Application-2
 
-#### Rule in/out our application
+### Rule in/out our application
 
 Check the [4 golden signals dashboard](https://link/to/dashboard)
 
@@ -42,7 +42,7 @@ Is there:
 
 ---
 
-#### Is this a bot?
+### Is this a bot?
 
 **Diagnosis:**
 
@@ -65,7 +65,7 @@ _Unusual activity_
 
 ---
 
-#### Is UPSTREAM_DEPEDENCY_A functional?
+### Is UPSTREAM_DEPEDENCY_A functional?
 
 **Diagnosis:**
 
@@ -89,7 +89,7 @@ High number of hits clustered together
 
 ---
 
-#### Have we performed a duff release?
+### Have we performed a duff release?
 
 **Diagnosis:** When was our last release?
 

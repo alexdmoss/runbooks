@@ -5,7 +5,7 @@ chapter: true
 
 ## How to Investigate Live Issues
 
-The majority of browse issues are one of the following root causes:
+The majority of Application-2 issues are one of the following root causes:
 
 1. An upstream dependency is generating errors to us.
 2. The platform or Google Cloud Services are having issues and causing a platform level outage.
@@ -41,5 +41,5 @@ Answer the following by reading the alert:
 2. Then drop into kibana [DOWNSTREAM_X](https://link/to/logs)  and [our own logs](https://link/to/logs) logs for debugging the alert.
 3. Identify the source of the errors by filtering the logs by status `log.wstatus`. Is the error message related to a specific dependency eg product API or basket?
 4. If the error is for an upstream API check the [dependencies](../dependencies/_index.md) page for details on the dashboard and svc channel and check it to see if that service is having issues.
-5. If the error is only occurring in browse, the next action is to look a infrastructure and code health to understand if code needs to be reverted. See [release and rollback](./release-and-rollback.md) on how to roll back code.
+5. If the error is only occurring in Application-2, the next action is to look a infrastructure and code health to understand if code needs to be reverted. See [release and rollback](./release-and-rollback.md) on how to roll back code.
 6. Report back findings into any incident channel or to the team channel as you find out more details so all working on the inc can see any new information.
