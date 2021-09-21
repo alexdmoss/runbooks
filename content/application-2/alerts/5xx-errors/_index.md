@@ -1,5 +1,5 @@
 ---
-title: "slo-application-2.prod-browse.5xx-errors"
+title: "5xx-errors"
 chapter: true
 ---
 

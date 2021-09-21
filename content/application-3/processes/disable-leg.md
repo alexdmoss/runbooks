@@ -1,6 +1,6 @@
 ---
-title: "Removing a leg from service"
-menuTitle: "Removing a leg"
+title: "Removing a Leg from service"
+menuTitle: "Removing a Leg"
 ---
 
 Here would be a document about removing a leg - no not that sort of leg :wink:

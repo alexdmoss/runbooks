@@ -1,5 +1,5 @@
 ---
-title: "Resolving dead letters"
+title: "Resolving Dead Letters"
 ---
 
 Many of our microservices subscribe to Google Pubsub subscriptions. If they fail to process a message from a subscription, the message will be moved to a GCS bucket. This is a deadletter.

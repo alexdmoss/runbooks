@@ -1,6 +1,6 @@
 ---
-title: "Hitperson duties and processes"
-menuTitle: "Hitperson duties and processes"
+title: "Hitperson Duties and Processes"
+menuTitle: "Hitperson Duties"
 ---
 
 {{% notice tip %}}

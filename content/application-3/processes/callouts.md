@@ -1,6 +1,6 @@
 ---
 title: "Calling out Team X or responding to a call out"
-menuTitle: "Callouts and incidents"
+menuTitle: "Callouts and Incidents"
 ---
 
 ### Start Here

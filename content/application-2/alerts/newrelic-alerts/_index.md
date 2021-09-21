@@ -1,5 +1,5 @@
 ---
-title: "slo-application-2-newrelic-alerts"
+title: "newrelic-alerts"
 chapter: true
 ---
 
