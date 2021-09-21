@@ -17,6 +17,9 @@ function main() {
     gcloud app deploy dispatch.yaml --project="${GCP_PROJECT_ID}" --quiet
     echo "-> [INFO] Deployment complete"
 
+    echo "-> [INFO] Mapping custom domain"
+    gcloud app domain-mappings create runbooks.alexos.dev --project="${GCP_PROJECT_ID}"
+
     popd >/dev/null
 
     # weak basic test - not great for brand new sites in AppEngine - ~10-15 mins for new SSL certs to be issued and usable
