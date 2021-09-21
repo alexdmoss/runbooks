@@ -17,14 +17,16 @@ function main() {
     gcloud app deploy dispatch.yaml --project="${GCP_PROJECT_ID}" --quiet
     echo "-> [INFO] Deployment complete"
 
-    echo "-> [INFO] Mapping custom domain"
-    curl -sSL --request POST \
-        "https://appengine.googleapis.com/v1/apps/${GCP_PROJECT_ID}/domainMappings?overrideStrategy=OVERRIDE" \
-        --header "Authorization: Bearer $(gcloud auth print-access-token)" \
-        --header "Accept: application/json" \
-        --header "Content-Type: application/json" \
-        --data '{"id":"runbooks.alexos.dev"}' \
-        --compressed
+    if [[ $(gcloud app domain-mappings list --format='value(id)' --filter=ID="${HOSTNAME}" | wc -l) -eq 0 ]]; then
+        echo "-> [INFO] Mapping custom domain"
+        curl -sSL --request POST \
+            "https://appengine.googleapis.com/v1/apps/${GCP_PROJECT_ID}/domainMappings?overrideStrategy=OVERRIDE" \
+            --header "Authorization: Bearer $(gcloud auth print-access-token)" \
+            --header "Accept: application/json" \
+            --header "Content-Type: application/json" \
+            --data '{"id":"runbooks.alexos.dev"}' \
+            --compressed
+    fi
 
     popd >/dev/null
 
