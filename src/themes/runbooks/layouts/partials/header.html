@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Page.Language | default "en" }}" class="js csstransforms3d">
+<html lang="{{ .Page.Language | default "en" }}" class="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +10,24 @@
 
     
     {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
-    <link href="{{"css/nucleus.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+    <link href="{{"css/style.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+    <!-- <link href="{{"css/nucleus.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet"> -->
     <link href="{{"css/fontawesome-all.min.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
-    <link href="{{"css/hybrid.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+    <!-- <link href="{{"css/hybrid.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet"> -->
     <link href="{{"css/featherlight.min.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
     <link href="{{"css/perfect-scrollbar.min.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
     <link href="{{"css/auto-complete.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
     <link href="{{"css/asciinema-player.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
-    <link href="{{"css/hugo-theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
+    <!-- <link href="{{"css/hugo-theme.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet"> -->
 
-    <!-- remove assetBusting so browse caches it for dark mode -->
-    <link href="/css/theme-light.css" id="light-style" type="text/css" rel="stylesheet">
-    <link href="/css/theme-dark.css" id="dark-style" type="text/css" rel="alternate stylesheet">
+    <!-- <link href="/css/theme-light.css" type="text/css" rel="stylesheet"> -->
 
-    <script src="{{"js/jquery-2.x.min.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+    <script src="{{"js/jquery-2.x.min.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+    <script>
+      // loads theme preference early to reduce visual re-draw for user
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -35,7 +39,7 @@
         }
       {{ end }}
     </style>
-    {{ partial "custom-header.html" . }}
+
   </head>
   <body class="" data-url="{{ .RelPermalink }}">
 
@@ -43,6 +47,7 @@
         <section id="body">
         <div id="overlay"></div>
         <div class="padding highlightable">
+          {{ partial "mode.html" . }}
               {{if not .IsHome}}
               <div>
                 <div id="top-bar">

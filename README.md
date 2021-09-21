@@ -15,5 +15,5 @@ Most things are handled via CI, but the domain registration requires a bit of ma
 
 ## To Do
 
-- [ ] Dark mode switching needs a look - base on Principles site instead
-- [ ] All the CSS files
+- [ ] Style dark mode properly
+- [ ] Refactor CSS - it is a total mess
