@@ -18,7 +18,7 @@ function main() {
     echo "-> [INFO] Deployment complete"
 
     echo "-> [INFO] Mapping custom domain"
-    curl --request POST \
+    curl -sSL --request POST \
         "https://appengine.googleapis.com/v1/apps/${GCP_PROJECT_ID}/domainMappings?overrideStrategy=OVERRIDE" \
         --header "Authorization: Bearer $(gcloud auth print-access-token)" \
         --header "Accept: application/json" \
@@ -31,7 +31,7 @@ function main() {
     # weak basic test - not great for brand new sites in AppEngine - ~10-15 mins for new SSL certs to be issued and usable
     echo "Checking HTTP status code for https://${HOSTNAME}/ ..."
 
-    response_code=$(curl -k -L -o /dev/null -w "%{http_code}" https://"${HOSTNAME}"/)
+    response_code=$(curl -sSLk -o /dev/null -w "%{http_code}" https://"${HOSTNAME}"/)
 
     if [[ ${response_code:0:1} == "4" ]] || [[ ${response_code:0:1} == "5" ]]; then
         echo "-> [ERROR] Test FAILED - HTTP response code was ${response_code}"
