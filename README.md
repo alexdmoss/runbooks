@@ -15,8 +15,5 @@ Most things are handled via CI, but the domain registration requires a bit of ma
 
 ## To Do
 
-- [ ] Page to showcase features - and update Theme README to link to these
-  - [ ] git snippets
-  - [ ] screen cap
 - [ ] Dark mode switching needs a look - base on Principles site instead
 - [ ] All the CSS files

@@ -63,6 +63,7 @@
     <script src="{{"js/html5shiv-printshiv.min.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
     <script src="{{"js/highlight.pack.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="{{"js/asciinema-player.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
     <script src="{{"js/modernizr.custom.71422.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
     <script src="{{"js/learn.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
     <script src="{{"js/hugo-learn.js" | relURL}}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"></script>
@@ -72,6 +73,8 @@
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
+
+
     {{ partial "custom-footer.html" . }}
 
   </body>

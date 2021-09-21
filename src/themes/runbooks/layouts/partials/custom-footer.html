@@ -2,13 +2,17 @@
 <script>
 // hack to move the sidebar menu to the active link
 var sidebarPosition = $('.sidemenu').offset().top;
-var activeLinkPosition = $('.active').offset().top;
+var activeLinkPosition = 0;
+if($('.active').length) {
+  activeLinkPosition = $('.active').offset().top;
+}
 scrollPosition = activeLinkPosition - sidebarPosition;
 $('.sidemenu').animate({scrollTop: scrollPosition}, 1000, 'linear');
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- If you want to use Google Analytics, you can put the tracking info here. Keep in mind you'll probably also need a privacy/cookie handling policy ... -->
+<!-- If you want to use Google Analytics, you can put the tracking info here. 
+     Keep in mind you'll probably also need a privacy/cookie handling policy ... -->
 <!--
 <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-CODE-HERE"></script>
 <script>

@@ -49,6 +49,14 @@ These are available - see here for free tier which can be used: https://fontawes
 
 Syntax is e.g. `I <i class="fas fa-heart"></i> GCP` which gives ... I <i class="fas fa-heart"></i> GCP
 
+## Emoji
+
+Are enabled - use the syntax `:emoji-name:`, e.g. :smile: [Emoji Cheatsheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/).
+
+## GitInfo
+
+Will be added automatically for "default" documents, because enableGitInfo is set in config.yaml. the config for this is in the theme - `./src/themes./runbooks/layout/_default/single.html`
+
 ---
 
 ## Shortcodes
@@ -113,7 +121,7 @@ Here is some additional text hidden behind an expansion dropdown
 
 ---
 
-## Flowcharts, Simple Diagrams, etc
+### Flowcharts, Simple Diagrams, etc
 
 It is possible to draw simple diagrams, like Flowcharts, Sequence Diagrams and good ol' GANTT charts if you desire, using the Mermaid plugin. Rather than reproduce the guide here, see [this page](https://learn.netlify.com/en/shortcodes/mermaid/) for more detail on how.
 
@@ -137,12 +145,40 @@ graph LR;
     C -->|Two| E[Result two]
 {{% /mermaid %}}
 
+### Asciinema
+
+```md
+{{</*asciinema key="examples/demo" rows="10" preload="1"*/>}}
+```
+
+{{< asciinema key="examples/demo" rows="10" preload="1" >}}
+
+... where the cast you've saved is called `demo.cast`, and it is saved in the `examples/` sub-directory under `content/`.
+
+### YouTube
+
+```md
+{{</*youtube id="G1IbRujko-A" title="Gandalf"*/>}}
+```
+
+{{< youtube id="G1IbRujko-A" title="Gandalf" >}}
+
+### Gist
+
+```md
+{{</*gist alexdmoss e1b1c7e94b9339e855b60f8152613bba*/>}}
+```
+
+{{< gist alexdmoss e1b1c7e94b9339e855b60f8152613bba >}}
+
+### Github
+
+```md
+{{</*github repo="alexdmoss/runbooks" file=".markdownlint.json" lang="json" options=""*/>}}
+```
+
+{{< github repo="alexdmoss/runbooks" file=".markdownlint.json" lang="json" options="linenos=table,hl_lines=3" >}}
+
+See also: https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode
+
 ---
-
-## Emoji
-
-Are enabled - use the syntax `:emoji-name:`, e.g. :smile: [Emoji Cheatsheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/).
-
-## GitInfo
-
-Will be added automatically for "default" documents, because enableGitInfo is set in config.yaml. the config for this is in the theme - `./src/themes./runbooks/layout/_default/single.html`
