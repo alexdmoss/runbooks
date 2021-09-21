@@ -18,7 +18,13 @@ function main() {
     echo "-> [INFO] Deployment complete"
 
     echo "-> [INFO] Mapping custom domain"
-    gcloud app domain-mappings create runbooks.alexos.dev --project="${GCP_PROJECT_ID}"
+    curl --request POST \
+        "https://appengine.googleapis.com/v1/apps/${GCP_PROJECT_ID}/domainMappings?overrideStrategy=OVERRIDE" \
+        --header "Authorization: Bearer $(gcloud auth print-access-token)" \
+        --header "Accept: application/json" \
+        --header "Content-Type: application/json" \
+        --data '{"id":"runbooks.alexos.dev"}' \
+        --compressed
 
     popd >/dev/null
 
