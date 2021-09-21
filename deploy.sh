@@ -17,7 +17,7 @@ function main() {
     gcloud app deploy dispatch.yaml --project="${GCP_PROJECT_ID}" --quiet
     echo "-> [INFO] Deployment complete"
 
-    if [[ $(gcloud app domain-mappings list --format='value(id)' --filter=ID="${HOSTNAME}" | wc -l) -eq 0 ]]; then
+    if [[ $(gcloud app domain-mappings list --project="${GCP_PROJECT_ID}" --format='value(id)' --filter=ID="${HOSTNAME}" | wc -l) -eq 0 ]]; then
         echo "-> [INFO] Mapping custom domain"
         curl -sSL --request POST \
             "https://appengine.googleapis.com/v1/apps/${GCP_PROJECT_ID}/domainMappings?overrideStrategy=OVERRIDE" \
