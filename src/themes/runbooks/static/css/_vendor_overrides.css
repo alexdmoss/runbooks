@@ -1,0 +1,107 @@
+.highlightable {
+    padding: 1rem 0 1rem;
+    overflow: auto;
+    position: relative;
+}
+
+.hljs::selection, .hljs span::selection {
+    background: #b7b7b7;
+}
+
+.lightbox-active #body {
+    overflow: visible;
+}
+
+.lightbox-active #body .padding {
+    overflow: visible;
+}
+
+#github-contrib i {
+    vertical-align: middle;
+}
+
+.featherlight img {
+    margin: 0 !important;
+}
+
+/************* Asciinema ***********/
+
+.lifecycle #body-inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 2rem 0 0;
+    position: relative;
+}
+
+.lifecycle #body-inner ol {
+    margin: 1rem 0 1rem 0;
+    padding: 2rem;
+    position: relative;
+}
+
+.lifecycle #body-inner ol li {
+    margin-left: 1rem;
+}
+
+.lifecycle #body-inner ol strong, .lifecycle #body-inner ol label, .lifecycle #body-inner ol th {
+    text-decoration: underline;
+}
+
+.lifecycle #body-inner ol ol {
+    margin-left: -1rem;
+}
+
+.lifecycle #body-inner h3[class*='level'] {
+    font-size: 20px;
+    position: absolute;
+    margin: 0;
+    padding: 4px 10px;
+    right: 0;
+    z-index: 1000;
+    color: #fff;
+    background: #1ABC9C;
+}
+
+.lifecycle #body-inner ol h3 {
+    margin-top: 1rem !important;
+    right: 2rem !important;
+}
+
+.lifecycle #body-inner .level-1 + ol {
+    background: #f6fefc;
+    border: 4px solid #1ABC9C;
+    color: #16A085;
+}
+
+.lifecycle #body-inner .level-1 + ol h3 {
+    background: #2ECC71;
+}
+
+.lifecycle #body-inner .level-2 + ol {
+    background: #f7fdf9;
+    border: 4px solid #2ECC71;
+    color: #27AE60;
+}
+
+.lifecycle #body-inner .level-2 + ol h3 {
+    background: #3498DB;
+}
+
+.lifecycle #body-inner .level-3 + ol {
+    background: #f3f9fd;
+    border: 4px solid #3498DB;
+}
+
+.lifecycle #body-inner .level-3 + ol h3 {
+    background: #34495E;
+}
+
+.lifecycle #body-inner .level-4 + ol {
+    background: #e4eaf0;
+    border: 4px solid #34495E;
+    color: #2C3E50;
+}
+
+.lifecycle #body-inner .level-4 + ol h3 {
+    background: #34495E;
+}

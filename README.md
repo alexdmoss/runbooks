@@ -17,3 +17,4 @@ Most things are handled via CI, but the domain registration requires a bit of ma
 
 - [ ] Style dark mode properly
 - [ ] Refactor CSS - it is a total mess
+- [ ] Check 404 page styling etc may be broken

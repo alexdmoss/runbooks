@@ -1,0 +1,29 @@
+.container {
+    width: 75em;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@media only all and (min-width: 60em) and (max-width: 74.938em) {
+    .container {
+        width: 60em;
+    }
+}
+
+@media only all and (min-width: 48em) and (max-width: 59.938em) {
+    .container {
+        width: 48em;
+    }
+}
+
+@media only all and (min-width: 30.063em) and (max-width: 47.938em) {
+    .container {
+        width: 30em;
+    }
+}
+
+@media only all and (max-width: 30em) {
+    .container {
+        width: 100%;
+    }
+}

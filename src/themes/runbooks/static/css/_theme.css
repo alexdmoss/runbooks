@@ -1,4 +1,483 @@
-body {
-    background: var(--bg-color);
-    color: var(--font-color);
+.small {
+    font-size: 0.9em;
+}
+
+.smallest {
+    font-size: 0.8em;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+/************** Body ***************/
+
+#main {
+    background: #f7f7f7;
+    margin: 0 0 1.563rem 0;
+}
+#body {
+    position: relative;
+    margin-left: 300px;
+    min-height: 100%;
+}
+
+@media only all and (max-width: 47.938em) {
+    #body {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+@media only all and (max-width: 59.938em) {
+    #body {
+        margin-left: 230px;
+    }
+}
+
+#body img, #body .video-container {
+    margin: 3rem auto;
+    display: block;
+    text-align: center;
+}
+#body img.border, #body .video-container.border {
+    border: 2px solid #e6e6e6 !important;
+    padding: 2px;
+}
+#body img.shadow, #body .video-container.shadow {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+#body img.inline {
+    display: inline !important;
+    margin: 0 !important;
+    vertical-align: bottom;
+}
+#body .bordered {
+    border: 1px solid #ccc;
+}
+#body .padding {
+    padding: 3rem 6rem;
+}
+@media only all and (max-width: 59.938em) {
+    #body .padding {
+        position: static;
+        padding: 15px 3rem;
+    }
+}
+@media only all and (max-width: 47.938em) {
+    #body .padding {
+        padding: 5px 1rem;
+    }
+}
+#body h1 + hr {
+    margin-top: -1.7rem;
+    margin-bottom: 3rem;
+}
+
+#body-inner {
+    margin-bottom: 5rem;
+}
+
+#body-inner pre {
+    white-space: pre-wrap;
+}
+
+/************** Body Nav ***************/
+
+@media only all and (max-width: 59.938em) {
+    #body #navigation {
+        position: static;
+        margin-right: 0 !important;
+        width: 100%;
+        display: table;
+    }
+}
+#body .nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 4rem;
+    font-size: 50px;
+    height: 100%;
+    cursor: pointer;
+    display: table;
+    text-align: center;
+}
+#body .nav > i {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+@media only all and (max-width: 59.938em) {
+    #body .nav {
+        display: table-cell;
+        position: static;
+        top: auto;
+        width: 50%;
+        text-align: center;
+        height: 100px;
+        line-height: 100px;
+        padding-top: 0;
+    }
+    #body .nav > i {
+        display: inline-block;
+    }
+}
+#body .nav:hover {
+    background: #F6F6F6;
+}
+#body .nav.nav-pref {
+    left: 0;
+}
+#body .nav.nav-next {
+    right: 0;
+}
+
+/************** Header ***************/
+
+#header-wrapper {
+    background: lightgray;
+    color: #fff;
+    text-align: center;
+    border-bottom: 4px solid darkgray;
+    padding: 1rem;
+}
+
+#header a {
+    display: inline-block;
+}
+
+#header #logo-svg {
+    width: 8rem;
+    height: 2rem;
+}
+
+#header #logo-svg path {
+    fill: #fff;
+}
+
+#top-bar {
+    background: #F6F6F6;
+    border-radius: 2px;
+    padding: 0 1rem;
+    height: 0;
+    min-height: 3rem;
+}
+
+/************** Sidebar ***************/
+
+#sidebar {
+    background-color: #322A38;
+    position: fixed;
+    top: 0;
+    width: 300px;
+    bottom: 0;
+    left: 0;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+@media only all and (max-width: 59.938em) {
+    #sidebar {
+        width: 230px;
+    }
+}
+@media only all and (max-width: 47.938em) {
+    #sidebar {
+        width: 230px;
+        left: -230px;
+    }
+}
+
+#sidebar a {
+    color: #ccc;
+}
+#sidebar a:hover {
+    color: #e6e6e6;
+}
+
+#sidebar a.subtitle {
+    color: rgba(204, 204, 204, 0.6);
+}
+
+#sidebar hr {
+    border-bottom: 1px solid #2a232f;
+}
+
+#sidebar a.padding {
+    padding: 0 1rem;
+}
+
+#sidebar h5 {
+    margin: 2rem 0 0;
+    position: relative;
+    line-height: 2;
+}
+
+#sidebar h5 a {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#sidebar h5 i {
+    color: rgba(204, 204, 204, 0.6);
+    position: absolute;
+    right: 0.6rem;
+    top: 0.7rem;
+    font-size: 80%;
+}
+
+#sidebar h5.parent a {
+    background: #201b24;
+    color: #d9d9d9 !important;
+}
+
+#sidebar h5.active a {
+    background: #fff;
+    color: #777 !important;
+}
+
+#sidebar h5.active i {
+    color: #777 !important;
+}
+
+#sidebar h5 + ul.topics {
+    display: none;
+    margin-top: 0;
+}
+
+#sidebar h5.parent + ul.topics, #sidebar h5.active + ul.topics {
+    display: block;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar ul.searched a {
+    color: #999999;
+}
+
+#sidebar ul.searched .search-match a {
+    color: #e6e6e6;
+}
+
+#sidebar ul.searched .search-match a:hover {
+    color: white;
+}
+
+#sidebar ul.topics {
+    margin: 0 1rem;
+}
+
+#sidebar ul.topics.searched ul {
+    display: block;
+}
+
+#sidebar ul.topics ul {
+    display: none;
+}    
+    
+#sidebar ul.topics ul ul {
+    padding-bottom: 0;
+}
+
+#sidebar ul.topics li.parent ul, #sidebar ul.topics > li.active ul {
+    display: block;
+}
+
+#sidebar ul.topics > li > a {
+    line-height: 2rem;
+    font-size: 1.1rem;
+}
+
+#sidebar ul.topics > li > a b {
+    opacity: 0.5;
+    font-weight: normal;
+}
+
+#sidebar ul.topics > li > a .fa {
+    margin-top: 9px;
+}
+
+#sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
+    background: #251f29;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#sidebar ul li.active > a {
+    background: #fff;
+    color: #777 !important;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#sidebar ul li {
+    padding: 0;
+}
+
+#sidebar ul li.visited + span {
+    margin-right: 16px;
+}
+
+#sidebar ul li a {
+    display: block;
+    padding: 2px 0;
+}
+
+#sidebar ul li a span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+
+#sidebar ul li > a {
+    padding: 4px 0;
+}
+
+#sidebar ul li.visited > a .read-icon {
+    color: #1a8fbb;
+    display: inline;
+}
+
+#sidebar ul li li {
+    padding-left: 1rem;
+    text-indent: 0.2rem;
+}
+
+
+#sidebar ul.topics > li > a .read-icon {
+    margin-top: 9px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar #shortcuts li {
+    padding: 2px 0;
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#sidebar ul li .read-icon {
+    display: none;
+    float: right;
+    font-size: 13px;
+    min-width: 16px;
+    margin: 4px 0 0 0;
+    text-align: right;
+}
+#sidebar ul li.visited > a .read-icon {
+    color: #1a8fbb;
+    display: inline;
+}
+
+#sidebar #shortcuts h3 {
+    font-family: "Heading-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    color: white ;
+    margin-top:1rem;
+    padding-left: 1rem;
+}
+
+@media only all and (max-width: 47.938em) {
+    .sidebar-hidden {
+        overflow: hidden;
+    }
+    .sidebar-hidden #sidebar {
+        left: 0;
+    }
+    .sidebar-hidden #body {
+        margin-left: 230px;
+        overflow: hidden;
+    }
+    .sidebar-hidden #overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+}
+
+/************** Chapter (index for folder) ***************/
+
+body #chapter h1 {
+    font-size: 2.5rem;
+}
+@media only all and (min-width: 48em) and (max-width: 59.938em) {
+    body #chapter h1 {
+        font-size: 2rem;
+    }
+}
+@media only all and (max-width: 47.938em) {
+    body #chapter h1 {
+        font-size: 1rem;
+    }
+}
+
+#chapter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem 0;
+}
+
+#chapter #body-inner {
+    padding-bottom: 3rem;
+    max-width: 80%;
+}
+
+#chapter h3 {
+    font-family: "Heading-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight: 300;
+}
+
+#chapter h1 {
+    font-size: 5rem;
+    border-bottom: 4px solid #F0F2F4;
+}
+
+#chapter p {
+    text-align: left;
+}
+
+/************** Footer ***************/
+
+#prefooter hr {
+    margin: 5px; padding: 0;
+}
+#footer {
+    padding-top: 15px;
+    padding-left: 18px; 
+    color: #b3b3b3;
+    font-size: 13px;
+}
+#footer p {
+    margin: 0;
+}
+
+.footline {
+    font-size: 0.9em;
 }

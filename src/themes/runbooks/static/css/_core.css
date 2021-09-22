@@ -1,0 +1,308 @@
+body {
+  background: var(--bg-color);
+  color: var(--font-color);
+  font-family: "Body-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: 16px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.85rem 0 1.7rem 0;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  line-height: 1.1;
+  font-family: "Heading-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  text-rendering: optimizeLegibility;
+  color: #5e5e5e;
+  letter-spacing: -1px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #222;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 110% !important;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+h3 {
+  font-size: 1.6rem;
+  line-height: 110% !important;
+  margin: 2rem 0 1rem 0;
+
+}
+
+h4 {
+  font-size: 1.4rem;
+  line-height: 110% !important;
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+h5 {
+  font-size: 1.2rem;
+  line-height: 110% !important;
+  margin: 1rem 0 0.2rem 0;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 110% !important;
+  margin: 0.5rem 0 0.2rem 0;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+a {
+  color: #00bdf3;
+}
+
+a:hover {
+  color: #0082a7;
+}
+
+ul,
+ol {
+  margin-top: 1.7rem;
+  margin-bottom: 1.7rem;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+blockquote {
+  margin: 1.7rem 0;
+  padding-left: 0.85rem;
+  border-left: 10px solid #F0F2F4;
+}
+
+blockquote p {
+  font-size: 1.1rem;
+  color: #999;
+}
+blockquote cite {
+  display: block;
+  text-align: right;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+cite {
+  display: block;
+  font-size: 0.925rem;
+}
+
+cite:before {
+  content: "\2014 \0020";
+}
+
+pre {
+  /* padding: 1rem;
+  margin: 2rem 0; */
+  background: #1d1f21;
+  border: 0;
+  border-radius: 2px;
+  line-height: 1.15;
+  margin: 1.7rem 0;
+  padding: 0.938rem;
+  position: relative;
+  color: #ffffff;
+}
+
+code, kbd, pre, samp {
+  font-family: "Code-Font", menlo, monospace;
+  font-size: 92%;
+}
+
+code {
+  vertical-align: bottom;
+  border-radius: 2px;
+  white-space: nowrap;
+  color: #5e5e5e;
+  background: #FFF7DD;
+  border: 1px solid #fbf0cb;
+  padding: 0px 2px;
+}
+
+code + .copy-to-clipboard {
+  margin-left: -1px;
+  border-left: 0 !important;
+  font-size: inherit !important;
+  vertical-align: middle;
+  height: 21px;
+  top: 0;
+}
+
+pre code {
+  color: whitesmoke;
+  background: inherit;
+  white-space: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+
+small {
+  font-size: 0.925rem;
+}
+
+hr {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.7rem 0;
+  border-bottom: 4px solid #F0F2F4;
+}
+
+table {
+  border: 1px solid #eaeaea;
+  table-layout: auto;
+}
+
+th {
+  background: #f7f7f7;
+  padding: 0.5rem;
+}
+
+td {
+  padding: 0.5rem;
+  border: 1px solid #eaeaea;
+}
+
+fieldset {
+  border: 0;
+  padding: 0.938rem;
+  margin: 0 0 1.7rem 0;
+}
+
+input,
+label,
+select {
+  display: block;
+}
+
+label {
+  margin-bottom: 0.425rem;
+}
+
+label.required:after {
+  content: "*";
+}
+
+label abbr {
+  display: none;
+}
+
+textarea,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+select[multiple=multiple] {
+  -webkit-transition: border-color;
+  -moz-transition: border-color;
+  transition: border-color;
+  border-radius: 0.1875rem;
+  margin-bottom: 0.85rem;
+  padding: 0.425rem 0.425rem;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+textarea:hover,
+input[type="email"]:hover,
+input[type="number"]:hover,
+input[type="password"]:hover,
+input[type="search"]:hover,
+input[type="tel"]:hover,
+input[type="text"]:hover,
+input[type="url"]:hover,
+input[type="color"]:hover,
+input[type="date"]:hover,
+input[type="datetime"]:hover,
+input[type="datetime-local"]:hover,
+input[type="month"]:hover,
+input[type="time"]:hover,
+input[type="week"]:hover,
+select[multiple=multiple]:hover {
+  border-color: #c4c4c4;
+}
+
+textarea:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="color"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+select[multiple=multiple]:focus {
+  outline: none;
+  border-color: #00bdf3;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .06), 0 0 5px rgba(0, 169, 218, .7)
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 0.425rem;
+}
+
+input[type="file"] {
+  width: 100%;
+}
+
+select {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 1.7rem;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: inherit;
+}
