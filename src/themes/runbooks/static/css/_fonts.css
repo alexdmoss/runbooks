@@ -1,28 +1,28 @@
-@font-face { 
-    font-family: 'Body-Font'; 
+@font-face {
+    font-family: 'Body-Font';
     src: url('../fonts/WorkSans-VariableFont_wght.ttf');
-	font-weight: 100 1000;
-	font-stretch: 25% 151%;
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
 }
 
-@font-face { 
-    font-family: 'Body-Font'; 
+@font-face {
+    font-family: 'Body-Font';
     src: url('../fonts/WorkSans-Italic-VariableFont_wght.ttf');
-	font-weight: 100 1000;
-	font-stretch: 25% 151%;
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
     font-style: italic;
 }
 
-@font-face { 
-    font-family: 'Heading-Font'; 
+@font-face {
+    font-family: 'Heading-Font';
     src: url('../fonts/Oxanium-VariableFont_wght.ttf');
-	font-weight: 400 1000;
-	font-stretch: 25% 151%;
+    font-weight: 400 1000;
+    font-stretch: 25% 151%;
 }
 
-@font-face { 
-    font-family: 'Code-Font'; 
+@font-face {
+    font-family: 'Code-Font';
     src: url('../fonts/FiraCode-VariableFont_wght.ttf');
-	font-weight: 100 1000;
-	font-stretch: 25% 151%;
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
 }

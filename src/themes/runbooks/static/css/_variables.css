@@ -1,9 +1,139 @@
 :root {
-    --bg-color: #fff;
-    --font-color: #000;
+    /* These colours are updated when dark mode selected - see below */
+    --bg-color:                             #ffffff;
+    --font-color:                           #000000;
+    --inverted-font-color:                  #ffffff;
+    --highlight-color:                      #00bdf3;
+    --highlight-hover-color:                #0082a7;
+    --heading-color:                        #322a38;
+    --light-shading-color:                  #e6e6e6;
+    --mid-shading-color:                    #cccccc;
+    --dark-shading-color:                   #5e5e5e;
+    --deep-shading-color:                   #272822;
+
+    --link-color:                           var(--highlight-color);
+    --link-hover-color:                     var(--highlight-hover-color);
+
+    --horizontal-line-color:                var(--light-shading-color);
+
+    --blockquote-edge-color:                var(--highlight-color);
+    --blockquote-font-color:                var(--dark-shading-color);
+
+    --pre-bg-color:                         var(--deep-shading-color);
+    --pre-font-color:                       var(--light-shading-color);
+    --code-bg-color:                        var(--light-shading-color);
+    --code-font-color:                      var(--heading-color);
+
+    --clipboard-icon-font-color:            var(--dark-shading-color);
+    --clipboard-icon-bg-color:              var(--light-shading-color);
+    --clipboard-icon-hover-color:           var(--mid-shading-color);
+    --clipboard-pre-bg-color:               var(--deep-shading-color);
+    --clipboard-pre-font-color:             var(--mid-shading-color);
+    --clipboard-pre-hover-bg-color:         var(--dark-shading-color);
+    --clipboard-pre-hover-font-color:       var(--inverted-font-color);
+
+    --table-border-color:                   var(--light-shading-color);
+    --table-heading-color:                  var(--light-shading-color);
+    --table-font-color:                     var(--light-shading-color);
+
+    --input-bg-color:                       var(--bg-color);
+    --input-border-color:                   var(--light-shading-color);
+    --input-border-hover-color:             var(--highlight-color);
+    --input-border-focus-color:             var(--highlight-color);
+    --input-box-shadow-color:               var(--heading-color);
+
+    --main-bg-color:                        var(--light-shading-color);
+
+    --image-border-color:                   var(--light-shading-color);
+    --image-shadow-color:                   var(--heading-color);
+
+    --body-bordered-color:                  var(--mid-shading-color);
+    --body-nav-hover-color:                 var(--light-shading-color);
+
+    --header-wrapper-bg-color:              var(--light-shading-color);
+    --header-wrapper-font-color:            var(--inverted-font-color);
+    --header-wrapper-border-color:          var(--highlight-hover-color);
+    --header-logo-fill-color:               var(--bg-color);
+
+    --top-bar-bg-color:                     var(--light-shading-color);
+
+    --sidebar-bg-color:                     var(--heading-color);
+    --sidebar-link-color:                   var(--mid-shading-color);
+    --sidebar-link-hover-color:             var(--light-shading-color);
+    --sidebar-subtitle-color:               var(--mid-shading-color);
+    --sidebar-bar-color:                    var(--heading-color);
+    --sidebar-heading-color:                var(--mid-shading-color);
+    --sidebar-heading-bg-color:             var(--font-color);
+    --sidebar-heading-font-color:           var(--light-shading-color);
+    --sidebar-heading-active-bg-color:      var(--bg-color);
+    --sidebar-heading-active-font-color:    var(--dark-shading-color);
+    --sidebar-list-bg-color:                var(--deep-shading-color);
+    --sidebar-list-active-bg-color:         var(--bg-color);
+    --sidebar-list-active-font-color:       var(--dark-shading-color);
+    --sidebar-read-icon-color:              var(--highlight-color);
+    --sidebar-shortcuts-font-color:         var(--inverted-font-color);
+    --sidebar-hidden-bg-color:              var(--mid-shading-color);
+    --sidebar-toggle-border-color:          var(--light-shading-color);
+
+    --searched-color:                       var(--mid-shading-color);
+    --searched-match-color:                 var(--light-shading-color);
+    --searched-hover-color:                 var(--inverted-font-color);
+
+    --chapter-heading-border-color:         var(--light-shading-color);
+
+    --footer-color:                         var(--font-color);
+
+    --button-focus-font-color:              var(--deep-shading-color);
+    --button-font-color:                    var(--deep-shading-color);
+    --button-bg-color:                      var(--bg-color);
+    --button-border-color:                  var(--highlight-color);
+    --button-border-color:                  var(--mid-shading-color);
+    --button-hover-bg-color:                var(--highlight-color);
+    --button-hover-font-color:              var(--inverted-font-color);
+    --button-hover-border-color:            var(--highlight-hover-color);
+    --button-active-font-color:             var(--inverted-font-color);
+    --button-active-bg-color:               var(--dark-shading-color);
+    --button-active-border-color:           var(--dark-shading-color);
+    
+    --tooltip-font-color:                   var(--inverted-font-color);
+    --tooltip-bg-color:                     var(--deep-shading-color);
+    
+    --attachments-font-color:               var(--dark-shading-color);
+
+    --progress-bg-color:                    var(--light-shading-color);
+    --progress-border-color:                var(--mid-shading-color);
+    --toc-border-color:                     var(--light-shading-color);
+    
+    --searchbox-border-color:               var(--highlight-color);
+    --searchbox-bg-color:                   var(--highlight-hover-color);
+    --searchbox-placeholder-color:          var(--inverted-font-color);
+    
+    --slider-color:                         var(--mid-shading-color);
+    --slider-bg-color:                      var(--bg-color);
+    --slider-button-color:                  var(--highlight-color);
+    
+    --notices-font-color:                   var(--dark-shading-color);
+    --notices-bg-color:                     var(--bg-color);
+    --notices-info-top-color:               #f0b37e;
+    --notices-info-bg-color:                #fff2db;
+    --notices-warning-top-color:            #d9534f;
+    --notices-warning-bg-color:             #fae2e2;
+    --notices-note-top-color:               #6ab0de;
+    --notices-note-bg-color:                #e7f2fa;
+    --notices-tip-top-color:                #5cb85c;
+    --notices-tip-bg-color:                 #e6f9e6;
+    
 }
 
 :root[data-theme="dark"] {
-    --bg-color: #000;
-    --font-color: #fff;
+    --bg-color:                             #000000;
+    --font-color:                           #ffffff;
+    --inverted-font-color:                  #000000;
+    --highlight-color:                      #00bdf3;
+    --highlight-hover-color:                #0082a7;
+    --heading-color:                        #322a38;
+    --light-shading-color:                  #e6e6e6;
+    --mid-shading-color:                    #cccccc;
+    --dark-shading-color:                   #5e5e5e;
+    --deep-shading-color:                   #272822;
 }

@@ -1,14 +1,5 @@
 /******************* Misc *******************/
 
-.page-title {
-    margin-top: -25px;
-    padding: 25px;
-    float: left;
-    clear: both;
-    background: #9c6fb6;
-    color: #fff;
-}
-
 .is-sticky #top-bar {
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.1);
 }
@@ -19,7 +10,7 @@
 
 @media only all and (max-width: 47.938em) {
     #sidebar-toggle-span {
-    border-right: thin solid #DAD8D8 !important;
+    border-right: thin solid var(--sidebar-toggle-border-color) !important;
     padding-right: 0.5rem !important;
     margin-right: 1rem !important;
     display: inline;
@@ -101,22 +92,22 @@
 
 .btn:hover,
 .btn:focus {
-    color: #2b2b2b !important;
+    color: var(--button-focus-font-color) !important;
     text-decoration: none !important;
 }
 
 .btn-default {
-    color: #333 !important;
-    background-color: #fff !important;
-    border-color: #ccc !important;
+    color: var(--button-font-color) !important;
+    background-color: var(--button-bg-color) !important;
+    border-color: var(--button-border-color) !important;
 }
 
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active {
-    color: #fff !important;
-    background-color: #9e9e9e !important;
-    border-color: #9e9e9e !important;
+    color: var(--button-active-font-color) !important;
+    background-color: var(--button-active-bg-color) !important;
+    border-color:var(--button-active-border-color) !important;
 }
 
 .btn-default:active {
@@ -132,41 +123,25 @@
 }
 
 .button {
-    background: #9c6fb6;
-    color: #fff;
-    box-shadow: 0 3px 0 #00a5d4;
+    background: var(--button-bg-color);
+    color: var(--button-font-color);
+    box-shadow: 0 3px 0 var(--button-border-color);
 }
 
 .button:hover {
-    background: #00a5d4;
-    box-shadow: 0 3px 0 #008db6;
-    color: #fff;
+    background: var(--button-hover-bg-color);
+    box-shadow: 0 3px 0 var(--button-hover-border-color);
+    color: var(--button-hover-font-color);
 }
 
 .button:active {
-    box-shadow: 0 1px 0 #008db6;
-}
-
-.button-secondary {
-    background: #F8B450;
-    color: #fff;
-    box-shadow: 0 3px 0 #f7a733;
-}
-
-.button-secondary:hover {
-    background: #f7a733;
-    box-shadow: 0 3px 0 #f69b15;
-    color: #fff;
-}
-
-.button-secondary:active {
-    box-shadow: 0 1px 0 #f69b15;
+    box-shadow: 0 1px 0 var(--button-hover-border-color);
 }
 
 /******************* Copy To Cipboard *******************/
 
 .anchor {
-    color: #00bdf3;
+    color: var(--link-color);
     font-size: 0.5em;
     cursor: pointer;
     visibility: hidden;
@@ -194,27 +169,30 @@ h6:hover .anchor {
     display: inline-block;
     vertical-align: middle;
     position: relative;
-    color: #5e5e5e;
-    background-color: #FFF7DD;
+    color: var(--clipboard-icon-font-color);
+    background-color: var(--clipboard-icon-bg-color);
     margin-left: -.2rem;
     cursor: pointer;
     border-radius: 0 2px 2px 0;
     margin-bottom: 1px;
 }
+
 .copy-to-clipboard:hover {
-    background-color: #E8E2CD;
+    background-color: var(--clipboard-icon-hover-color);
 }
+
 pre .copy-to-clipboard {
     position: absolute;
     right: 4px;
     top: 4px;
-    background-color: #4d5257;
-    color: #ccc;
+    background-color: var(--clipboard-pre-bg-color);
+    color: var(--clipboard-pre-font-color) !important;
     border-radius: 2px;
 }
+
 pre .copy-to-clipboard:hover {
-    background-color: #656c72;
-    color: #fff;
+    background-color: var(--clipboard-pre-hover-bg-color);
+    color: var(--clipboard-pre-hover-font-color);
 }
 
 /******************* Tooltip *******************/
@@ -229,7 +207,7 @@ pre .copy-to-clipboard:hover {
     display: none;
     padding: 5px 8px;
     font: normal normal 11px/1.5 "Body-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-    color: #fff;
+    color: var(--tooltip-font-color);
     text-align: center;
     text-decoration: none;
     text-shadow: none;
@@ -239,7 +217,7 @@ pre .copy-to-clipboard:hover {
     white-space: pre;
     pointer-events: none;
     content: attr(aria-label);
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--tooltip-bg-color);
     border-radius: 3px;
     -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -250,7 +228,7 @@ pre .copy-to-clipboard:hover {
     display: none;
     width: 0;
     height: 0;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--tooltip-bg-color);
     pointer-events: none;
     content: "";
     border: 5px solid transparent;
@@ -272,7 +250,7 @@ pre .copy-to-clipboard:hover {
     right: 50%;
     bottom: -5px;
     margin-right: -5px;
-    border-bottom-color: rgba(0, 0, 0, 0.8);
+    border-bottom-color: var(--tooltip-bg-color);
 }
 
 .tooltipped-se:after {
@@ -296,7 +274,7 @@ pre .copy-to-clipboard:hover {
     right: 50%;
     bottom: auto;
     margin-right: -5px;
-    border-top-color: rgba(0, 0, 0, 0.8);
+    border-top-color: var(--tooltip-bg-color);
 }
 
 .tooltipped-ne:after {
@@ -325,7 +303,7 @@ pre .copy-to-clipboard:hover {
     bottom: 50%;
     left: -5px;
     margin-top: -5px;
-    border-left-color: rgba(0, 0, 0, 0.8);
+    border-left-color: var(--tooltip-bg-color);
 }
 
 .tooltipped-e:after {
@@ -340,7 +318,7 @@ pre .copy-to-clipboard:hover {
     right: -5px;
     bottom: 50%;
     margin-top: -5px;
-    border-right-color: rgba(0, 0, 0, 0.8);
+    border-right-color: var(--tooltip-bg-color);
 }
 
 /******************* Table of Contents *******************/
@@ -379,15 +357,15 @@ pre .copy-to-clipboard:hover {
 
 .progress {
     position: absolute;
-    background-color: rgba(246, 246, 246, 0.97);
+    background-color: var(--progress-bg-color);
     width: auto;
-    border: thin solid #ECECEC;
+    border: thin solid var(--progress-border-color);
     display: none;
     z-index: 200;
 }
 
 #toc-menu {
-    border-right: thin solid #DAD8D8 !important;
+    border-right: thin solid var(--toc-border-color) !important;
     padding-right: 1rem !important;
     margin-right: 0.5rem !important;
 }
@@ -397,33 +375,27 @@ pre .copy-to-clipboard:hover {
 .searchbox {
     margin-top: 1rem;
     position: relative;
-    border: 1px solid #33a1ff;
-    background: #1a8fbb;
+    border: 1px solid var(--searchbox-border-color);
+    background: var(--searchbox-bg-color);
     border-radius: 4px;
 }
 
 .searchbox label {
-    color: rgba(255, 255, 255, 0.8);
     position: absolute;
     left: 10px;
     top: 3px;
 }
 
 .searchbox span {
-    color: rgba(255, 255, 255, 0.6);
     position: absolute;
     right: 10px;
     top: 3px;
     cursor: pointer;
 }
 
-.searchbox span:hover {
-    color: rgba(255, 255, 255, 0.9);
-}
 
 .searchbox input {
     display: inline-block;
-    color: #fff;
     width: 100%;
     height: 30px;
     background: transparent;
@@ -434,19 +406,19 @@ pre .copy-to-clipboard:hover {
 }
 
 .searchbox input::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--searchbox-placeholder-color);
 }
 
 .searchbox input::-moz-placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--searchbox-placeholder-color);
 }
 
 .searchbox input:-moz-placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--searchbox-placeholder-color);
 }
 
 .searchbox input:-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--searchbox-placeholder-color);
 }
 
 #searchResults {
@@ -472,7 +444,7 @@ pre .copy-to-clipboard:hover {
 }
 
 .slider {
-    background-color: #ccc;
+    background-color: var(--slider-color);
     bottom: 0;
     cursor: pointer;
     left: 0;
@@ -483,7 +455,7 @@ pre .copy-to-clipboard:hover {
 }
 
 .slider:before {
-    background-color: #fff;
+    background-color: var(--slider-bg-color);
     bottom: 4px;
     content: "";
     height: 26px;
@@ -494,7 +466,7 @@ pre .copy-to-clipboard:hover {
 }
 
 input:checked+.slider {
-    background-color: #66bb6a;
+    background-color: var(--slider-button-color);
 }
 
 input:checked+.slider:before {
@@ -521,12 +493,12 @@ div.notices p {
     font-size: 1rem;
     margin-top: 0rem;
     margin-bottom: 0rem;
-    color: #666;
+    color: var(--notices-font-color);
 }
 div.notices p:first-child:before {
     position: absolute;
     top: 2px;
-    color: #fff;
+    color: var(--notices-bg-color);
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f06a";
@@ -535,33 +507,33 @@ div.notices p:first-child:before {
 div.notices p:first-child:after {
     position: absolute;
     top: 2px;
-    color: #fff;
+    color: var(--notices-bg-color);
     left: 2rem;
 }
 div.notices.info p {
-    border-top: 30px solid #F0B37E;
-    background: #FFF2DB;
+    border-top: 30px solid var(--notices-info-top-color);
+    background: var(--notices-info-bg-color);
 }
 div.notices.info p:first-child:after {
     content: 'Info';
 }
 div.notices.warning p {
-    border-top: 30px solid rgba(217, 83, 79, 0.8);
-    background: #FAE2E2;
+    border-top: 30px solid var(--notices-warning-top-color);
+    background: var(--notices-warning-bg-color);
 }
 div.notices.warning p:first-child:after {
     content: 'Warning';
 }
 div.notices.note p {
-    border-top: 30px solid #6AB0DE;
-    background: #E7F2FA;
+    border-top: 30px solid var(--notices-note-top-color);
+    background: var(--notices-note-bg-color);
 }
 div.notices.note p:first-child:after {
     content: 'Note';
 }
 div.notices.tip p {
     border-top: 30px solid rgba(92, 184, 92, 0.8);
-    background: #E6F9E6;
+    background: var(--notices-tip-bg-color);
 }
 div.notices.tip p:first-child:after {
     content: 'Tip';
@@ -588,43 +560,7 @@ section.attachments .attachments-files {
     font-size: 1rem;
     margin-top: 0rem;
     margin-bottom: 0rem;
-    color: #666;
-}
-
-section.attachments.orange label {
-    color: #fff;
-    background: #F0B37E;
-}
-
-section.attachments.orange .attachments-files {
-    background: #FFF2DB;
-}
-
-section.attachments.green label {
-    color: #fff;
-    background: rgba(92, 184, 92, 0.8);
-}
-
-section.attachments.green .attachments-files {
-    background: #E6F9E6;
-}
-
-section.attachments.blue label {
-    color: #fff;
-    background: #6AB0DE;
-}
-
-section.attachments.blue .attachments-files {
-    background: #E7F2FA;
-}
-
-section.attachments.grey label {
-    color: #fff;
-    background: #505d65;
-}
-
-section.attachments.grey .attachments-files {
-    background: #f4f4f4;
+    color: var(--attachments-font-color);
 }
 
 /******************* Children *******************/
