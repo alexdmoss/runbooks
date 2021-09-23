@@ -1,6 +1,6 @@
 ---
 title: "What Our Support Does Not Cover"
-menuTitle: "What Our Support Doesn't Cover"
+menuTitle: "What Support Doesn't Cover"
 ---
 
 The development team supports their service and there is a hitperson during office hours - Slack channel: `#team-a`. There is also standby support for out of hours issues, usually communicated via automatic system exception alerts.

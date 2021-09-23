@@ -10,6 +10,7 @@
     --mid-shading-color:                    #cccccc;
     --dark-shading-color:                   #5e5e5e;
     --deep-shading-color:                   #272822;
+    --dark-bg-color:                        #322a38;
 
     --link-color:                           var(--highlight-color);
     --link-hover-color:                     var(--highlight-hover-color);
@@ -55,11 +56,11 @@
 
     --top-bar-bg-color:                     var(--light-shading-color);
 
-    --sidebar-bg-color:                     var(--heading-color);
+    --sidebar-bg-color:                     var(--deep-shading-color);
     --sidebar-link-color:                   var(--mid-shading-color);
     --sidebar-link-hover-color:             var(--light-shading-color);
     --sidebar-subtitle-color:               var(--mid-shading-color);
-    --sidebar-bar-color:                    var(--heading-color);
+    --sidebar-bar-color:                    var(--dark-bg-color);
     --sidebar-heading-color:                var(--mid-shading-color);
     --sidebar-heading-bg-color:             var(--font-color);
     --sidebar-heading-font-color:           var(--light-shading-color);
@@ -85,7 +86,6 @@
     --button-font-color:                    var(--deep-shading-color);
     --button-bg-color:                      var(--bg-color);
     --button-border-color:                  var(--highlight-color);
-    --button-border-color:                  var(--mid-shading-color);
     --button-hover-bg-color:                var(--highlight-color);
     --button-hover-font-color:              var(--inverted-font-color);
     --button-hover-border-color:            var(--highlight-hover-color);
@@ -124,14 +124,29 @@
 }
 
 :root[data-theme="dark"] {
-    --bg-color:                             #000000;
-    --font-color:                           #ffffff;
-    --inverted-font-color:                  #000000;
-    --highlight-color:                      #00bdf3;
-    --highlight-hover-color:                #0082a7;
-    --heading-color:                        #322a38;
-    --light-shading-color:                  #e6e6e6;
-    --mid-shading-color:                    #cccccc;
-    --dark-shading-color:                   #5e5e5e;
-    --deep-shading-color:                   #272822;
+    --bg-color:                             #1c1f2a;
+    --font-color:                           #bfcad9;
+    --heading-color:                        #bfcad9;
+    --inverted-font-color:                  #ffffff;
+    --notices-font-color:                   var(--deep-shading-color);
+
+    /* inverted in darkmode */
+    --light-shading-color:                  #5e5e5e;
+    --dark-shading-color:                   #e6e6e6;
+
+    /* each pair inverted in darkmode */
+    --notices-info-top-color:               #fff2db;
+    --notices-info-bg-color:                #f0b37e;
+    --notices-warning-top-color:            #fae2e2;
+    --notices-warning-bg-color:             #d9534f;
+    --notices-note-top-color:               #e7f2fa;
+    --notices-note-bg-color:                #6ab0de;
+    --notices-tip-top-color:                #e6f9e6;
+    --notices-tip-bg-color:                 #5cb85c;
+
+    --button-focus-font-color:              var(--deep-shading-color);
+    --button-font-color:                    var(--font-color);
+    --button-bg-color:                      #000;
+    --button-active-bg-color:               var(--light-shading-color);
 }
+

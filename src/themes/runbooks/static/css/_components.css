@@ -571,7 +571,7 @@ div.notices.note p:first-child:after {
     content: 'Note';
 }
 div.notices.tip p {
-    border-top: 30px solid rgba(92, 184, 92, 0.8);
+    border-top: 30px solid var(--notices-tip-top-color);
     background: var(--notices-tip-bg-color);
 }
 div.notices.tip p:first-child:after {
