@@ -135,6 +135,7 @@ code+.copy-to-clipboard {
 }
 
 pre code {
+  color: inherit;
   background: inherit;
   white-space: inherit;
   border: 0;

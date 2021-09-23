@@ -15,6 +15,10 @@ Most things are handled via CI, but the domain registration requires a bit of ma
 
 ## To Do
 
-- [ ] Style dark mode properly
-- [ ] Refactor CSS - it is a total mess
+- [ ] Styling of dark mode toggle
+- [ ] Style dark mode properly and lose theme-dark.css
+- [ ] Fix link underline - hopefully fixes occasional flickering also?
+- [ ] Fix logo background
+- [ ] Better homepage image
 - [ ] Check 404 page styling etc may be broken
+- [ ] Check all pages in light and dark mode before publishing

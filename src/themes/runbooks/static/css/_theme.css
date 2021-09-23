@@ -517,11 +517,6 @@ body #chapter h1 {
     font-weight: 300;
 }
 
-#chapter h1 {
-    font-size: 5rem;
-    border-bottom: 4px solid var(--chapter-heading-border-color);
-}
-
 #chapter p {
     text-align: left;
 }

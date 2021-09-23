@@ -169,12 +169,11 @@ h6:hover .anchor {
     display: inline-block;
     vertical-align: middle;
     position: relative;
-    color: var(--clipboard-icon-font-color);
     background-color: var(--clipboard-icon-bg-color);
     margin-left: -.2rem;
     cursor: pointer;
     border-radius: 0 2px 2px 0;
-    margin-bottom: 1px;
+    margin-bottom: 0;
 }
 
 .copy-to-clipboard:hover {
@@ -192,7 +191,6 @@ pre .copy-to-clipboard {
 
 pre .copy-to-clipboard:hover {
     background-color: var(--clipboard-pre-hover-bg-color);
-    color: var(--clipboard-pre-hover-font-color);
 }
 
 /******************* Tooltip *******************/

@@ -24,12 +24,10 @@
     --code-bg-color:                        var(--light-shading-color);
     --code-font-color:                      var(--heading-color);
 
-    --clipboard-icon-font-color:            var(--dark-shading-color);
     --clipboard-icon-bg-color:              var(--light-shading-color);
     --clipboard-icon-hover-color:           var(--mid-shading-color);
-    --clipboard-pre-bg-color:               var(--deep-shading-color);
-    --clipboard-pre-font-color:             var(--mid-shading-color);
-    --clipboard-pre-hover-bg-color:         var(--dark-shading-color);
+    --clipboard-pre-bg-color:               var(--light-shading-color);
+    --clipboard-pre-hover-bg-color:         var(--mid-shading-color);
     --clipboard-pre-hover-font-color:       var(--inverted-font-color);
 
     --table-border-color:                   var(--light-shading-color);
