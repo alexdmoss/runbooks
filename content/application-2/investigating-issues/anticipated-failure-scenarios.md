@@ -1,5 +1,5 @@
 ---
-title: "Anticipated failure scenarios"
+title: "Anticipated Failure Scenarios"
 ---
 
 Last Updated: DD MMM 2021
