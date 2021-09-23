@@ -71,7 +71,7 @@
     --sidebar-list-active-font-color:       var(--dark-shading-color);
     --sidebar-read-icon-color:              var(--highlight-color);
     --sidebar-shortcuts-font-color:         var(--inverted-font-color);
-    --sidebar-hidden-bg-color:              var(--mid-shading-color);
+    --sidebar-hidden-bg-color:              var(--bg-color);
     --sidebar-toggle-border-color:          var(--light-shading-color);
 
     --searched-color:                       var(--mid-shading-color);
@@ -118,6 +118,7 @@
     --notices-warning-bg-color:             #fae2e2;
     --notices-note-top-color:               #6ab0de;
     --notices-note-bg-color:                #e7f2fa;
+    --notices-note-link-color:              var(--highlight-color);
     --notices-tip-top-color:                #5cb85c;
     --notices-tip-bg-color:                 #e6f9e6;
     
@@ -141,6 +142,7 @@
     --notices-warning-bg-color:             #d9534f;
     --notices-note-top-color:               #e7f2fa;
     --notices-note-bg-color:                #6ab0de;
+    --notices-note-link-color:              var(--light-shading-color);    
     --notices-tip-top-color:                #e6f9e6;
     --notices-tip-bg-color:                 #5cb85c;
 

@@ -10,9 +10,9 @@
 
 @media only all and (max-width: 47.938em) {
     #sidebar-toggle-span {
-    border-right: thin solid var(--sidebar-toggle-border-color) !important;
+    /* border-right: thin solid var(--sidebar-toggle-border-color) !important;
     padding-right: 0.5rem !important;
-    margin-right: 1rem !important;
+    margin-right: 1rem !important; */
     display: inline;
     }
 }
@@ -566,6 +566,9 @@ div.notices.warning p:first-child:after {
 div.notices.note p {
     border-top: 30px solid var(--notices-note-top-color);
     background: var(--notices-note-bg-color);
+}
+div.notices.note a {
+    color: var(--notices-note-link-color);
 }
 div.notices.note p:first-child:after {
     content: 'Note';

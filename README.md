@@ -12,7 +12,3 @@ Most things are handled via CI, but the domain registration requires a bit of ma
 
 - Stuff in `./content/` is where your main content goes, of course. It can also be used to override things like your favicon, logo, etc.
 - Google Analytics Tag (if you wish!): `./src/themes/runbooks/layouts/partials/custom-footer.html`
-
-## To Do
-
-- [ ] Fix mobile experience - have broken it somehow
