@@ -106,8 +106,8 @@
     --searchbox-bg-color:                   var(--highlight-hover-color);
     --searchbox-placeholder-color:          var(--inverted-font-color);
     
-    --slider-color:                         var(--mid-shading-color);
-    --slider-bg-color:                      var(--bg-color);
+    --slider-bg-color:                      var(--mid-shading-color);
+    --slider-toggled-color:                 var(--bg-color);
     --slider-button-color:                  var(--highlight-color);
     
     --notices-font-color:                   var(--dark-shading-color);

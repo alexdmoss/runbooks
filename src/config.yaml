@@ -19,7 +19,7 @@ theme: "runbooks"
 
 # See: https://learn.netlify.com/en/basics/configuration/
 params:
-  editURL: "https://gitlab.com/alexos-dev/runbooks/tree/master/content/"
+  editURL: "https://gitlab.com/alexos-dev/runbooks/tree/main/content/"
   commitURL: "https://gitlab.com/alexos-dev/runbooks/commit/"
   author: "<<<your-team>>>"
   description: "Operational Runbooks for <<<your thing>>>"
@@ -29,7 +29,7 @@ params:
   
 menu:
   shortcuts:
-  - name: "<i class='fab fa-gitlab'></i> Git Repo"
+  - name: "<i class='fab fa-gitlab'></i>&nbsp;&nbsp;Source"
     url: "https://gitlab.com/alexos-dev/runbooks/"
     weight: 10
 
