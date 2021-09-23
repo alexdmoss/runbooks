@@ -4,7 +4,7 @@ title: Runbooks
 
 # Runbooks
 
-![How To](/images/howto.jpg)
+![Incident](/images/home.png?width=40pc&classes=border,shadow)
 
 This site hosts runbooks for *your_platform_here*.
 
