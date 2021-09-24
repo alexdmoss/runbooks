@@ -7,7 +7,7 @@ chapter: true
 
 **Summary:** The rules configured in NewRelic detected an anomaly
 
-**Customer Impact:** customer has problems with their journey to buy something
+**Customer Impact:** customer has problems with their journey to do X
 
 **Actions:**
 
@@ -27,13 +27,7 @@ You will need to determine if Application-2 is the cause of the problem or suffe
 
 ## NewRelic False Alert?
 
-Sometimes NewRelic Synthetics can have natural connection problems so just in case check the Script Log tab to see the exception. In case you conclude it is a false alert, we should just resolve the Pager Duty alert with a note on it.
-
-False alerts can be triggered from new relic due to below reasons
-
-- Synthetics issues
-  - Synthetic script is failing due to not getting response from the Insights API
-- New relic systems may be faulty. Check the latest [NewRelic status](https://status.newrelic.com/)
+Sometimes NewRelic alerts can have natural connection problems so just in case check the Script Log tab to see the exception. In case you conclude it is a false alert, we should just resolve the Pager Duty alert with a note on it.
 
 ## Checking Application-2
 
@@ -49,7 +43,7 @@ Is there:
 - Is Memory saturation growing
 - Has the number of replicas spiked up or down? Has it remained there?
 
-Check the [NewRelic Synthetic Monitors page](https://link/to/newrelic) to find more details about the alert you just saw.
+Check the [NewRelic Monitors page](https://link/to/newrelic) to find more details about the alert you just saw.
 
 ---
 

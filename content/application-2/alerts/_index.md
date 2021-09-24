@@ -11,7 +11,7 @@ More information about monitoring and alerts can be found [here](https://link/to
 
 ## Standard Alerts
 
-These alerts are the predefined ones for any service on PLATFORM_NAME. If they are not required, or if you wish to vary the alerting criteria necessary to trigger them, you can edit the [service definition base yaml](https://link/to/config/in/git) and create some **microservice_alert_overrides** for the relevant microservice(s).
+These alerts are the predefined ones for any service on PLATFORM_NAME. If they are not required, or if you wish to vary the alerting criteria necessary to trigger them, you can edit the [service definition](https://link/to/config/in/git) and create some **microservice_alert_overrides** for the relevant microservice(s).
 
 ---
 
