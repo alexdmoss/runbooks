@@ -1,4 +1,5 @@
 .git
+bootstrap/
 content/
 src/
 .gitlab-ci.yml

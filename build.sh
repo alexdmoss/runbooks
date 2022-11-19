@@ -46,9 +46,14 @@ function main() {
         echo "-> [INFO] All tests passed!"
     fi
 
+    echo "-> [INFO] Baking docker image ..."
+
+    image_name="eu.gcr.io/${PROJECT_ID}/${SERVICE}"
+    docker pull "${image_name}":latest || true
+    docker build --cache-from "${image_name}":latest --tag "${image_name}":latest .
+
     if [[ ${CI_SERVER:-} == "yes" ]]; then
         echo "-> [INFO] Pushing to registry ..."
-        image_name="eu.gcr.io/${PROJECT_ID}/${SERVICE}"
         docker tag "${image_name}":latest "${image_name}":"${CI_COMMIT_SHA}"
         docker push "${image_name}":"${CI_COMMIT_SHA}"
         docker push "${image_name}":latest
