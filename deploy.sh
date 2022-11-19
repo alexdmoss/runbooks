@@ -24,8 +24,6 @@ function main() {
 
     echo "-> [INFO] Deployment complete"
     
-    popd >/dev/null
-
     # weak basic test - not great for brand new sites in AppEngine - ~10-15 mins for new SSL certs to be issued and usable
     echo "Checking HTTP status code for https://${DOMAIN}/ ..."
 
