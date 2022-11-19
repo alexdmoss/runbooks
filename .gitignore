@@ -21,4 +21,5 @@ exampleSite/public
 **/out
 /target/
 
+src/.hugo_build.lock
 .vscode

@@ -3,6 +3,7 @@ set -euoE pipefail
 
 if [[ -z ${PROJECT_ID:-} ]]; then echo "GCP Project not set"; exit 1; fi
 if [[ -z ${SERVICE:-} ]]; then echo "Cloud Run Service not set"; exit 1; fi
+if [[ -z ${CI_COMMIT_SHA:-} ]]; then CI_COMMIT_SHA="local"; exit 1; fi
 
 function main() {
 
@@ -49,14 +50,11 @@ function main() {
     echo "-> [INFO] Baking docker image ..."
 
     image_name="eu.gcr.io/${PROJECT_ID}/${SERVICE}"
-    docker pull "${image_name}":latest || true
-    docker build --cache-from "${image_name}":latest --tag "${image_name}":latest .
+    docker build --tag "${image_name}":"${CI_COMMIT_SHA}" .
 
     if [[ ${CI_SERVER:-} == "yes" ]]; then
         echo "-> [INFO] Pushing to registry ..."
-        docker tag "${image_name}":latest "${image_name}":"${CI_COMMIT_SHA}"
         docker push "${image_name}":"${CI_COMMIT_SHA}"
-        docker push "${image_name}":latest
     fi
 
     popd >/dev/null
