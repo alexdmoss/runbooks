@@ -1,0 +1,5 @@
+.git
+content/
+src/
+.gitlab-ci.yml
+

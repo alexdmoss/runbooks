@@ -3,30 +3,36 @@ stages:
 - deploy
 
 variables:
-  HOSTNAME: runbooks.alexos.dev
+  PROJECT_ID: ${MW_PROJECT_ID}
+  SERVICE: runbooks
+  DOMAIN: runbooks.alexos.dev
+  REGION: europe-west1
+  PORT: "32080"
 
 build:
   stage: build
-  image: mosstech/ci-tools:latest
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  image: mosstech/gcloud-and-docker:390.0.0
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_DRIVER: overlay2
+  services:
+    - docker:dind
   before_script:
+  - echo "${RUN_CREDENTIALS}" | gcloud auth activate-service-account --key-file -
+  - gcloud auth configure-docker --quiet
   - curl -sLo hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_0.83.1_Linux-64bit.tar.gz
   - tar -xzf hugo.tar.gz && mv hugo /usr/local/bin/ && rm -f LICENSE README.md hugo.tar.gz
   script:
   - ./build.sh
-  artifacts:
-    paths:
-    - "app/www/**"
 
 deploy:
   stage: deploy
   image: mosstech/ci-tools:latest
-  dependencies:
-  - build
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   before_script:
-  - echo "${GOOGLE_CREDENTIALS}" | gcloud auth activate-service-account --key-file -
+  - echo "${RUN_CREDENTIALS}" | gcloud auth activate-service-account --key-file -
   script:
   - ./deploy.sh

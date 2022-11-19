@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euoE pipefail
 
-if [[ -z ${GCP_PROJECT_ID:-} ]]; then echo "GCP Project not set"; exit 1; fi
-if [[ -z ${HOSTNAME:-} ]]; then echo "Hostname not set"; exit 1; fi
+if [[ -z ${PROJECT_ID:-} ]]; then echo "GCP Project not set"; exit 1; fi
+if [[ -z ${SERVICE:-} ]]; then echo "Cloud Run Service not set"; exit 1; fi
 
 function main() {
 
@@ -44,6 +44,14 @@ function main() {
         exit 1
     else
         echo "-> [INFO] All tests passed!"
+    fi
+
+    if [[ ${CI_SERVER:-} == "yes" ]]; then
+        echo "-> [INFO] Pushing to registry ..."
+        image_name="eu.gcr.io/${PROJECT_ID}/${SERVICE}"
+        docker tag "${image_name}":latest "${image_name}":"${CI_COMMIT_SHA}"
+        docker push "${image_name}":"${CI_COMMIT_SHA}"
+        docker push "${image_name}":latest
     fi
 
     popd >/dev/null
