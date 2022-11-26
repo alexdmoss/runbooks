@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 set -euoE pipefail
 
-if [[ -z ${PROJECT_ID:-} ]]; then echo "GCP Project not set"; exit 1; fi
-if [[ -z ${SERVICE:-} ]]; then echo "Cloud Run Service not set"; exit 1; fi
-if [[ -z ${CI_COMMIT_SHA:-} ]]; then CI_COMMIT_SHA="local"; exit 1; fi
+if [[ -z ${GCP_PROJECT_ID:-} ]]; then echo "GCP Project not set"; exit 1; fi
+if [[ -z ${HOSTNAME:-} ]]; then echo "Hostname not set"; exit 1; fi
 
 function main() {
 
@@ -45,16 +44,6 @@ function main() {
         exit 1
     else
         echo "-> [INFO] All tests passed!"
-    fi
-
-    echo "-> [INFO] Baking docker image ..."
-
-    image_name="eu.gcr.io/${PROJECT_ID}/${SERVICE}"
-    docker build --tag "${image_name}":"${CI_COMMIT_SHA}" .
-
-    if [[ ${CI_SERVER:-} == "yes" ]]; then
-        echo "-> [INFO] Pushing to registry ..."
-        docker push "${image_name}":"${CI_COMMIT_SHA}"
     fi
 
     popd >/dev/null

@@ -1,0 +1,4 @@
+# This is just about ok because this is the only AppEngine app I have ... for now
+dispatch:
+  - url: "runbooks.alexos.dev/*"
+    service: default
