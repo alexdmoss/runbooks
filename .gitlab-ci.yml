@@ -4,7 +4,6 @@ stages:
 
 variables:
   HOSTNAME: runbooks.alexos.dev
-  GCP_PROJECT_ID: $APP_ENGINE_PROJECT_ID
 
 build:
   stage: build

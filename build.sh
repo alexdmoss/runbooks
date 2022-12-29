@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euoE pipefail
 
-if [[ -z ${GCP_PROJECT_ID:-} ]]; then echo "GCP Project not set"; exit 1; fi
+if [[ -z ${APP_ENGINE_PROJECT_ID:-} ]]; then echo "GCP Project not set"; exit 1; fi
 if [[ -z ${HOSTNAME:-} ]]; then echo "Hostname not set"; exit 1; fi
 
 function main() {
