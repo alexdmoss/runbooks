@@ -9,7 +9,7 @@ variables:
 
 build:
   stage: build
-  image: mosstech/ci-tools:latest
+  image: al3xos/ci-tools:latest
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   before_script:
@@ -23,7 +23,7 @@ build:
 
 deploy:
   stage: deploy
-  image: mosstech/ci-tools:latest
+  image: al3xos/ci-tools:latest
   dependencies:
   - build
   rules:
