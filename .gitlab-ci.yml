@@ -6,6 +6,7 @@ stages:
 
 variables:
   HOSTNAME: runbooks.alexos.dev
+  APP_ENGINE_PROJECT_ID: $MW_PROJECT_ID
 
 
 build:
