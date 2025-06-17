@@ -1,6 +1,7 @@
 stages:
 - build
 - deploy
+- scan
 
 
 variables:
@@ -13,7 +14,7 @@ build:
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   before_script:
-  - curl -sLo hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.83.1/hugo_0.83.1_Linux-64bit.tar.gz
+  - curl -sLo hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.147.3/hugo_0.147.3_Linux-64bit.tar.gz
   - tar -xzf hugo.tar.gz && mv hugo /usr/local/bin/ && rm -f LICENSE README.md hugo.tar.gz
   script:
   - ./build.sh
@@ -24,11 +25,26 @@ build:
 deploy:
   stage: deploy
   image: al3xos/ci-tools:latest
-  dependencies:
-  - build
+  needs: ["build"]
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   before_script:
   - echo "${RUN_CREDENTIALS}" | gcloud auth activate-service-account --key-file -
   script:
   - ./deploy.sh
+
+sonarcloud-check:
+  stage: scan
+  image:
+    name: sonarsource/sonar-scanner-cli:latest
+    entrypoint: [""]
+  needs: ["build"]
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - sonar-scanner
+  only:
+    - main
+  allow_failure: true

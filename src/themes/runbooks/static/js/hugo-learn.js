@@ -1,9 +1,9 @@
 // Get Parameters from some url
-var getUrlParameter = function getUrlParameter(sPageURL) {
-    var url = sPageURL.split('?');
-    var obj = {};
+let getUrlParameter = function getUrlParameter(sPageURL) {
+    let url = sPageURL.split('?');
+    let obj = {};
     if (url.length == 2) {
-      var sURLVariables = url[1].split('&'),
+      let sURLVariables = url[1].split('&'),
           sParameterName,
           i;
       for (i = 0; i < sURLVariables.length; i++) {
@@ -17,10 +17,10 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
 };
 
 // Execute actions on images generated from Markdown pages
-var images = $("div#body-inner img").not(".inline");
+let images = $("div#body-inner img").not(".inline");
 // Wrap image inside a featherlight (to get a full size view in a popup)
 images.wrap(function(){
-  var image =$(this);
+  let image =$(this);
   if (!image.parent("a").length) {
     return "<a href='" + image[0].src + "' data-featherlight='image'></a>";
   }
@@ -28,12 +28,12 @@ images.wrap(function(){
 
 // Change styles, depending on parameters set to the image
 images.each(function(index){
-  var image = $(this)
-  var o = getUrlParameter(image[0].src);
+  let image = $(this)
+  let o = getUrlParameter(image[0].src);
   if (typeof o !== "undefined") {
-    var h = o["height"];
-    var w = o["width"];
-    var c = o["classes"];
+    let h = o["height"];
+    let w = o["width"];
+    let c = o["classes"];
     image.css("width", function() {
       if (typeof w !== "undefined") {
         return w;
@@ -49,9 +49,9 @@ images.each(function(index){
       }
     });
     if (typeof c !== "undefined") {
-      var classes = c.split(',');
-      for (i = 0; i < classes.length; i++) {
-        image.addClass(classes[i]);
+      let classes = c.split(',');
+      for (const className of classes) {
+        image.addClass(className);
       }
     }
   }
@@ -65,11 +65,11 @@ $(document).ready(function(){
 
 jQuery(document).ready(function() {
   // Add link button for every
-  var text, clip = new Clipboard('.anchor');
+  let text, clip = new Clipboard('.anchor');
   $("h1~h2,h1~h3,h1~h4,h1~h5,h1~h6").append(function(index, html){
-    var element = $(this);
-    var url = encodeURI(document.location.origin + document.location.pathname);
-    var link = url + "#"+element[0].id;
+    let element = $(this);
+    let url = encodeURI(document.location.origin + document.location.pathname);
+    let link = url + "#"+element[0].id;
     return " <span class='anchor' data-clipboard-text='"+link+"'>" +
       "<i class='fas fa-link fa-lg'></i>" +
       "</span>"

@@ -1,10 +1,10 @@
 // Scrollbar Width function
 function getScrollBarWidth() {
-    var inner = document.createElement('p');
+    let inner = document.createElement('p');
     inner.style.width = "100%";
     inner.style.height = "200px";
 
-    var outer = document.createElement('div');
+    let outer = document.createElement('div');
     outer.style.position = "absolute";
     outer.style.top = "0px";
     outer.style.left = "0px";
@@ -15,9 +15,9 @@ function getScrollBarWidth() {
     outer.appendChild(inner);
 
     document.body.appendChild(outer);
-    var w1 = inner.offsetWidth;
+    let w1 = inner.offsetWidth;
     outer.style.overflow = 'scroll';
-    var w2 = inner.offsetWidth;
+    let w2 = inner.offsetWidth;
     if (w1 == w2) w2 = outer.clientWidth;
 
     document.body.removeChild(outer);
@@ -31,8 +31,8 @@ function setMenuHeight() {
 }
 
 function fallbackMessage(action) {
-    var actionMsg = '';
-    var actionKey = (action === 'cut' ? 'X' : 'C');
+    let actionMsg = '';
+    let actionKey = (action === 'cut' ? 'X' : 'C');
 
     if (/iPhone|iPad/i.test(navigator.userAgent)) {
         actionMsg = 'No support :(';
@@ -56,11 +56,11 @@ $(window).resize(function() {
 // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
 (function($, sr) {
 
-    var debounce = function(func, threshold, execAsap) {
-        var timeout;
+    let debounce = function(func, threshold, execAsap) {
+        let timeout;
 
         return function debounced() {
-            var obj = this, args = arguments;
+            let obj = this, args = arguments;
 
             function delayed() {
                 if (!execAsap)
@@ -89,7 +89,7 @@ jQuery(document).ready(function() {
         return false;
     });
 
-    var sidebarStatus = searchStatus = 'open';
+    let sidebarStatus = 'open';
     $('#sidebar .highlightable').perfectScrollbar();
     setMenuHeight();
 
@@ -115,20 +115,14 @@ jQuery(document).ready(function() {
         if (sidebarStatus == 'closed') {
             jQuery('[data-sidebar-toggle]').trigger('click');
             jQuery(document.body).removeClass('searchbox-hidden');
-            searchStatus = 'open';
-
-            return false;
+        } else {
+            jQuery(document.body).toggleClass('searchbox-hidden');
         }
-
-        jQuery(document.body).toggleClass('searchbox-hidden');
-        searchStatus = (jQuery(document.body).hasClass('searchbox-hidden') ? 'closed' : 'open');
-
-        return false;
     });
 
-    var ajax;
+    let ajax;
     jQuery('[data-search-input]').on('input', function() {
-        var input = jQuery(this),
+        let input = jQuery(this),
             value = input.val(),
             items = jQuery('[data-nav-id]');
         items.removeClass('search-match');
@@ -143,7 +137,7 @@ jQuery(document).ready(function() {
         sessionStorage.setItem('search-value', value);
         $(".highlightable").unhighlight({ element: 'mark' }).highlight(value, { element: 'mark' });
 
-        if (ajax && ajax.abort) ajax.abort();
+        ajax?.abort();
 
         jQuery('[data-search-clear]').on('click', function() {
             jQuery('[data-search-input]').val('').trigger('input');
@@ -159,14 +153,14 @@ jQuery(document).ready(function() {
     });
 
     if (sessionStorage.getItem('search-value')) {
-        var searchValue = sessionStorage.getItem('search-value')
+        let searchValue = sessionStorage.getItem('search-value')
         $(document.body).removeClass('searchbox-hidden');
         $('[data-search-input]').val(searchValue);
         $('[data-search-input]').trigger('input');
-        var searchedElem = $('#body-inner').find(':contains(' + searchValue + ')').get(0);
+        let searchedElem = $('#body-inner').find(':contains(' + searchValue + ')').get(0);
         if (searchedElem) {
             searchedElem.scrollIntoView(true);
-            var scrolledY = window.scrollY;
+            let scrolledY = window.scrollY;
             if(scrolledY){
                 window.scroll(0, scrolledY - 125);
             }
@@ -174,21 +168,21 @@ jQuery(document).ready(function() {
     }
 
     // clipboard
-    var clipInit = false;
+    let clipInit = false;
     $('code').each(function() {
-        var code = $(this),
+        let code = $(this),
             text = code.text();
 
         if (text.length > 15) {
             if (!clipInit) {
-                var text, clip = new Clipboard('.copy-to-clipboard', {
+                let text, clip = new Clipboard('.copy-to-clipboard', {
                     text: function(trigger) {
                         text = $(trigger).prev('code').text();
                         return text.replace(/^\$\s/gm, '');
                     }
                 });
 
-                var inPre;
+                let inPre;
                 clip.on('success', function(e) {
                     e.clearSelection();
                     inPre = $(e.trigger).parent().prop('tagName') == 'PRE';
@@ -238,7 +232,7 @@ jQuery(document).ready(function() {
     $('#top-bar a:not(:has(img)):not(.btn)').addClass('highlight');
     $('#body-inner a:not(:has(img)):not(.btn):not(a[rel="footnote"])').addClass('highlight');
 
-    var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
+    let touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
     if (!touchsupport){ // browser doesn't support touch
         $('#toc-menu').hover(function() {
             $('.progress').stop(true, false, true).fadeToggle(100);
@@ -265,9 +259,9 @@ jQuery(document).ready(function() {
     * involved, but this works for any anchor, including footnotes
     **/
     (function (document, history, location) {
-        var HISTORY_SUPPORT = !!(history && history.pushState);
+        let HISTORY_SUPPORT = !!history?.pushState;
 
-        var anchorScrolls = {
+        let anchorScrolls = {
             ANCHOR_REGEX: /^#[^ ]+$/,
             OFFSET_HEIGHT_PX: 50,
 
@@ -295,7 +289,7 @@ jQuery(document).ready(function() {
              * @return {Boolean} - Was the href an anchor.
              */
             scrollIfAnchor: function (href, pushToHistory) {
-                var match, anchorOffset;
+                let match, anchorOffset;
 
                 if (!this.ANCHOR_REGEX.test(href)) {
                     return false;
@@ -329,7 +323,7 @@ jQuery(document).ready(function() {
              * If the click event's target was an anchor, fix the scroll position.
              */
             delegateAnchors: function (e) {
-                var elem = e.target;
+                let elem = e.target;
 
                 if (this.scrollIfAnchor(elem.getAttribute('href'), true)) {
                     e.preventDefault();
@@ -363,7 +357,7 @@ jQuery(window).on('load', function() {
     sessionStorage.setItem(jQuery('body').data('url'), 1);
 
     // loop through the sessionStorage and see if something should be marked as visited
-    for (var url in sessionStorage) {
+    for (let url in sessionStorage) {
         if (sessionStorage.getItem(url) == 1) jQuery('[data-nav-id="' + url + '"]').addClass('visited');
     }
 
@@ -380,13 +374,13 @@ $(function() {
 jQuery.extend({
     highlight: function(node, re, nodeName, className) {
         if (node.nodeType === 3) {
-            var match = node.data.match(re);
+            let match = node.data.match(re);
             if (match) {
-                var highlight = document.createElement(nodeName || 'span');
+                let highlight = document.createElement(nodeName || 'span');
                 highlight.className = className || 'highlight';
-                var wordNode = node.splitText(match.index);
+                let wordNode = node.splitText(match.index);
                 wordNode.splitText(match[0].length);
-                var wordClone = wordNode.cloneNode(true);
+                let wordClone = wordNode.cloneNode(true);
                 highlight.appendChild(wordClone);
                 wordNode.parentNode.replaceChild(highlight, wordNode);
                 return 1; //skip added node in parent
@@ -394,8 +388,8 @@ jQuery.extend({
         } else if ((node.nodeType === 1 && node.childNodes) && // only element nodes that have children
             !/(script|style)/i.test(node.tagName) && // ignore script and style nodes
             !(node.tagName === nodeName.toUpperCase() && node.className === className)) { // skip if already highlighted
-            for (var i = 0; i < node.childNodes.length; i++) {
-                i += jQuery.highlight(node.childNodes[i], re, nodeName, className);
+            for (const child of node.childNodes) {
+                jQuery.highlight(child, re, nodeName, className);
             }
         }
         return 0;
@@ -403,21 +397,21 @@ jQuery.extend({
 });
 
 jQuery.fn.unhighlight = function(options) {
-    var settings = {
+    let settings = {
         className: 'highlight',
         element: 'span'
     };
     jQuery.extend(settings, options);
 
     return this.find(settings.element + "." + settings.className).each(function() {
-        var parent = this.parentNode;
+        let parent = this.parentNode;
         parent.replaceChild(this.firstChild, this);
         parent.normalize();
     }).end();
 };
 
 jQuery.fn.highlight = function(words, options) {
-    var settings = {
+    let settings = {
         className: 'highlight',
         element: 'span',
         caseSensitive: false,
@@ -439,12 +433,12 @@ jQuery.fn.highlight = function(words, options) {
     if (words.length == 0) { return this; }
     ;
 
-    var flag = settings.caseSensitive ? "" : "i";
-    var pattern = "(" + words.join("|") + ")";
+    let flag = settings.caseSensitive ? "" : "i";
+    let pattern = "(" + words.join("|") + ")";
     if (settings.wordsOnly) {
         pattern = "\\b" + pattern + "\\b";
     }
-    var re = new RegExp(pattern, flag);
+    let re = new RegExp(pattern, flag);
 
     return this.each(function() {
         jQuery.highlight(this, re, settings.element, settings.className);

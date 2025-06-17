@@ -46,4 +46,4 @@ This section is based on the tools we use at my place of work - adapt to suit of
 
 (Other runbook pages will automatically populate here, when this template is set as your `_index.md`)
 
-{{% children %}}
+{{% children /%}}

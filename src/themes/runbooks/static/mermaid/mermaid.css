@@ -85,7 +85,7 @@ text.actor {
 .noteText {
   fill: black;
   stroke: none;
-  font-family: 'trebuchet ms', verdana, arial;
+  font-family: 'trebuchet ms', verdana, arial, sans-serif;
   font-size: 14px;
 }
 /** Section styling */
@@ -119,7 +119,6 @@ text.actor {
 .sectionTitle {
   text-anchor: start;
   font-size: 11px;
-  text-height: 14px;
 }
 /* Grid and axis */
 .grid .tick {
@@ -250,12 +249,9 @@ text.actor {
   font-size: 18px;
   fill: black;
 }
-/*
 
-
-*/
 .node text {
-  font-family: 'trebuchet ms', verdana, arial;
+  font-family: 'trebuchet ms', verdana, arial, sans-serif;
   font-size: 14px;
 }
 div.mermaidTooltip {
@@ -263,7 +259,7 @@ div.mermaidTooltip {
   text-align: center;
   max-width: 200px;
   padding: 2px;
-  font-family: 'trebuchet ms', verdana, arial;
+  font-family: 'trebuchet ms', verdana, arial, sans-serif;
   font-size: 12px;
   background: #ffffde;
   border: 1px solid #aaaa33;

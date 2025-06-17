@@ -1,4 +1,7 @@
-{{ $dataJ := getJSON "https://api.github.com/repos/"  (.Get "repo")  "/contents/"  (.Get "file")  }}
+{{ $url := printf "https://api.github.com/repos/%s/contents/%s" (.Get "repo") (.Get "file") }}
+{{ $remote := resources.GetRemote $url }}
+{{ $dataJ := $remote | transform.Unmarshal }}
+
 {{ $con := base64Decode $dataJ.content }}
 
 {{ highlight $con (.Get "lang") (.Get "options") }}

@@ -421,12 +421,6 @@
     margin-top: 9px;
 }
 
-#sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
 #sidebar #shortcuts li {
     padding: 2px 0;
     list-style: none;
@@ -443,10 +437,7 @@
     text-align: right;
 }
 
-#sidebar ul li.visited>a .read-icon {
-    color: var(--sidebar-read-icon-color);
-    display: inline;
-}
+
 
 #sidebar #shortcuts h3 {
     font-family: "Heading-Font", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;

@@ -10,9 +10,6 @@
 
 @media only all and (max-width: 47.938em) {
     #sidebar-toggle-span {
-    /* border-right: thin solid var(--sidebar-toggle-border-color) !important;
-    padding-right: 0.5rem !important;
-    margin-right: 1rem !important; */
     display: inline;
     }
 }
@@ -538,7 +535,7 @@ div.notices p:first-child:before {
     position: absolute;
     top: 2px;
     color: var(--notices-bg-color);
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Free", sans-serif;
     font-weight: 900;
     content: "\f06a";
     left: 10px;

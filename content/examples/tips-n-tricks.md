@@ -96,7 +96,7 @@ Warning notice. Wowzer!
 Good to include on chapter landing (`_index.md`) pages:
 
 ```md
-{{%/* children */%}}
+{{%/* children *//%}}
 ```
 
 ### Adding Buttons

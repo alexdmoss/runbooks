@@ -44,13 +44,11 @@
                 {{ if .Site.Params.editURL }}
                   {{ $File := .File }}
                   {{ $Site := .Site }}
-                  {{with $File.Path }}
                   <div id="top-github-link">
-                    <a class="github-link" title='Improve This Page' href="{{ $Site.Params.editURL }}{{ replace $File.Dir "\\" "/" }}{{ $File.LogicalName }}" target="blank">
+                    <a class="github-link" title='Improve This Page' href="{{ $Site.Params.editURL }}" target="blank">
                       <i class="fas fa-edit"></i>
                     </a>
                   </div>
-                  {{ end }}
                 {{ end }}
 
                 {{ partial "mode.html" . }}

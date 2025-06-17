@@ -1,48 +1,17 @@
 <div class="expand">
-<div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(10,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-{{$expandMessage := "Expand me ..."}}
-{{ if .IsNamedParams }}
-<i style="font-size: x-small;" class="fas fa-chevron-right"></i>
-{{.Get "default" | default $expandMessage}}
-{{else}}
-<i style="font-size: x-small;" class="fas fa-chevron-right"></i>
-{{.Get 0 | default $expandMessage}}
-{{end}}
+    <button class="expand-label" style="cursor: pointer;" tabindex="0"
+        onclick="$h = $(this);$h.next('div').slideToggle(10,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+        {{$expandMessage := "Expand me ..."}}
+        {{ if .IsNamedParams }}
+        <i style="font-size: x-small;" class="fas fa-chevron-right"></i>
+        {{.Get "default" | default $expandMessage}}
+        {{else}}
+        <i style="font-size: x-small;" class="fas fa-chevron-right"></i>
+        {{.Get 0 | default $expandMessage}}
+        {{end}}
+    </button>
+    <div class="expand-content" style="display: none;">
+        {{.Inner | safeHTML}}
+    </div>
 </div>
-<div class="expand-content" style="display: none;">
-{{.Inner | safeHTML}}
-</div>
-</div>
-
-<!-- $h = $(this);$h.next('div').slideToggle(100,
-    function () {$h.children('i').attr('class',function () {
-        return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});
-    }
-    );" -->
-
-<!-- <span>
-    {{$expandMessage := "Expand me ..."}}
-    {{ if .IsNamedParams }}
-    {{.Get "default" | default $expandMessage}}
-    {{else}}
-    here
-    {{.Get 0 | default $expandMessage}}
-    {{end}}
-    </span> -->
-<!-- 
-    -<div class="expand">
-        -    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        -        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        -        <span>
-        -        {{$expandMessage := "Expand me ..."}}
-        -       {{ if .IsNamedParams }}
-        -       {{.Get "default" | default $expandMessage}}
-        -       {{else}}
-        -       {{.Get 0 | default $expandMessage}}
-        -       {{end}}
-        -       </span>
-        -    </div>
-        -    <div class="expand-content" style="display: none;">
-        -        {{.Inner | safeHTML}}
-        -    </div>
-        -</div> -->
