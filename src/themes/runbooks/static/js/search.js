@@ -1,4 +1,4 @@
-var lunrIndex, pagesIndex;
+let lunrIndex, pagesIndex, baseurl;
 
 function endsWith(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
@@ -7,7 +7,7 @@ function endsWith(str, suffix) {
 // Initialize lunrjs using our generated index file
 function initLunr() {
     if (!endsWith(baseurl,"/")){
-        baseurl = baseurl+'/'
+        baseurl = baseurl + '/';
     };
 
     // First retrieve the index file
@@ -35,7 +35,7 @@ function initLunr() {
             lunrIndex.pipeline.remove(lunrIndex.stemmer)
         })
         .fail(function(jqxhr, textStatus, error) {
-            var err = textStatus + ", " + error;
+            let err = textStatus + ", " + error;
             console.error("Error getting Hugo index flie:", err);
         });
 }
@@ -58,7 +58,7 @@ function search(query) {
 // Let's get started
 initLunr();
 $( document ).ready(function() {
-    var searchList = new autoComplete({
+    let searchList = new autoComplete({
         /* selector for the search box element */
         selector: $("#search-by").get(0),
         /* source is the callback to perform the search */
@@ -67,8 +67,8 @@ $( document ).ready(function() {
         },
         /* renderItem displays individual search results */
         renderItem: function(item, term) {
-            var numContextWords = 2;
-            var text = item.content.match(
+            let numContextWords = 2;
+            let text = item.content.match(
                 "(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}" +
                     term+"(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}");
             item.context = text;
