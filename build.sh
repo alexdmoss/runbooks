@@ -8,7 +8,7 @@ function main() {
 
     echo "-> [INFO] Building runbooks site ..."
 
-    git config --global --add safe.directory /builds/alexos-dev/runbooks
+    git config --global --add safe.directory /builds/alexos-public/runbooks
 
     pushd "$(dirname "${BASH_SOURCE[0]}")/src" >/dev/null
     mkdir -p ../app/www

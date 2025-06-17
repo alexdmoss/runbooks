@@ -2,8 +2,8 @@
 name = "runbooks"
 license = "MIT"
 description = "Documentation theme for hosting Runbooks using Hugo, heavily based on Grav Learn theme"
-homepage = "https://gitlab.com/alexos-dev/runbooks"
-repo = "https://gitlab.com/alexos-dev/runbooks"
+homepage = "https://gitlab.com/alexos-public/runbooks"
+repo = "https://gitlab.com/alexos-public/runbooks"
 tags = ["documentation", "doc", "search"]
 features = ["documentation", "search"]
 min_version = 0.82
