@@ -1,4 +1,4 @@
-let lunrIndex, pagesIndex, baseurl;
+let lunrIndex, pagesIndex;
 
 function endsWith(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
