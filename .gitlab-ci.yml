@@ -1,8 +1,6 @@
 stages:
 - build
 - deploy
-- scan
-
 
 variables:
   HOSTNAME: runbooks.alexos.dev
@@ -33,19 +31,3 @@ deploy:
   - echo "${APP_CI_CREDENTIALS}" | gcloud auth activate-service-account --key-file -
   script:
   - ./deploy.sh
-
-sonarcloud-check:
-  stage: scan
-  image:
-    name: sonarsource/sonar-scanner-cli:latest
-    entrypoint: [""]
-  needs: ["build"]
-  cache:
-    key: "${CI_JOB_NAME}"
-    paths:
-      - .sonar/cache
-  script:
-    - sonar-scanner
-  only:
-    - main
-  allow_failure: true
