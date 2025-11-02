@@ -12,28 +12,9 @@ function main() {
         echo "-> [ERROR] www/ directory not found. Did you run build.sh first?"
         exit 1
     fi
-    
-    echo "-> [DEBUG] Checking deployment package size..."
-    total_size=$(du -sh . | cut -f1)
-    file_count=$(find . -type f | wc -l)
-    echo "-> [DEBUG] Total size: $total_size, File count: $file_count"
-    
-    echo "-> [DEBUG] Checking for files over 32MB (App Engine limit)..."
-    find . -type f -size +32M -exec ls -lh {} \; | head -10
-    
-    echo "-> [DEBUG] Validating app.yaml syntax..."
-    cat app.yaml
-    
-    echo "-> [DEBUG] Checking if .gcloudignore exists..."
-    if [[ -f ".gcloudignore" ]]; then
-        echo "-> [DEBUG] .gcloudignore contents:"
-        cat .gcloudignore
-    else
-        echo "-> [DEBUG] No .gcloudignore file found"
-    fi
 
     echo "-> [INFO] Deploying runbooks site ..."
-    gcloud app deploy --project "${APP_ENGINE_PROJECT_ID}" --verbosity=debug
+    gcloud app deploy --project "${APP_ENGINE_PROJECT_ID}"
     echo "-> [INFO] Deployment complete"
 
     # this is only ok because this is the only AppEngine site in this project
