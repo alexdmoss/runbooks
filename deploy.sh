@@ -6,23 +6,31 @@ if [[ -z ${HOSTNAME:-} ]]; then echo "Hostname not set"; exit 1; fi
 
 function main() {
 
-    echo "-> [DEBUG] Checking authentication and permissions..."
-    echo "-> [DEBUG] Active account type:"
-    gcloud config get-value account | grep -q "@" && echo "Service account or user account detected" || echo "No account configured"
-    echo "-> [DEBUG] Checking App Engine application exists..."
-    gcloud app describe --project "${APP_ENGINE_PROJECT_ID}" --format="value(id)" || echo "Warning: App Engine app may not be initialized"
-
     pushd "$(dirname "${BASH_SOURCE[0]}")/app" >/dev/null
 
-    echo "-> [DEBUG] Checking build artifacts..."
     if [[ ! -d "www" ]]; then
         echo "-> [ERROR] www/ directory not found. Did you run build.sh first?"
         exit 1
     fi
-    echo "-> [DEBUG] Contents of app directory:"
-    ls -la
-    echo "-> [DEBUG] Sample of www/ directory:"
-    ls -la www/ | head -20
+    
+    echo "-> [DEBUG] Checking deployment package size..."
+    total_size=$(du -sh . | cut -f1)
+    file_count=$(find . -type f | wc -l)
+    echo "-> [DEBUG] Total size: $total_size, File count: $file_count"
+    
+    echo "-> [DEBUG] Checking for files over 32MB (App Engine limit)..."
+    find . -type f -size +32M -exec ls -lh {} \; | head -10
+    
+    echo "-> [DEBUG] Validating app.yaml syntax..."
+    cat app.yaml
+    
+    echo "-> [DEBUG] Checking if .gcloudignore exists..."
+    if [[ -f ".gcloudignore" ]]; then
+        echo "-> [DEBUG] .gcloudignore contents:"
+        cat .gcloudignore
+    else
+        echo "-> [DEBUG] No .gcloudignore file found"
+    fi
 
     echo "-> [INFO] Deploying runbooks site ..."
     gcloud app deploy --project "${APP_ENGINE_PROJECT_ID}" --verbosity=debug

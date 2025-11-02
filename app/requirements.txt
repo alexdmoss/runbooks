@@ -1,0 +1,2 @@
+# Empty requirements file for static site
+# App Engine python312 runtime requires this file to exist
