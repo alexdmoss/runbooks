@@ -6,10 +6,26 @@ if [[ -z ${HOSTNAME:-} ]]; then echo "Hostname not set"; exit 1; fi
 
 function main() {
 
+    echo "-> [DEBUG] Checking authentication and permissions..."
+    echo "-> [DEBUG] Active account type:"
+    gcloud config get-value account | grep -q "@" && echo "Service account or user account detected" || echo "No account configured"
+    echo "-> [DEBUG] Checking App Engine application exists..."
+    gcloud app describe --project "${APP_ENGINE_PROJECT_ID}" --format="value(id)" || echo "Warning: App Engine app may not be initialized"
+
     pushd "$(dirname "${BASH_SOURCE[0]}")/app" >/dev/null
 
+    echo "-> [DEBUG] Checking build artifacts..."
+    if [[ ! -d "www" ]]; then
+        echo "-> [ERROR] www/ directory not found. Did you run build.sh first?"
+        exit 1
+    fi
+    echo "-> [DEBUG] Contents of app directory:"
+    ls -la
+    echo "-> [DEBUG] Sample of www/ directory:"
+    ls -la www/ | head -20
+
     echo "-> [INFO] Deploying runbooks site ..."
-    gcloud app deploy --project "${APP_ENGINE_PROJECT_ID}" --quiet
+    gcloud app deploy --project "${APP_ENGINE_PROJECT_ID}" --verbosity=debug
     echo "-> [INFO] Deployment complete"
 
     # this is only ok because this is the only AppEngine site in this project
