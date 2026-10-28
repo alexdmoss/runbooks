@@ -35,18 +35,6 @@ function main() {
 
     popd >/dev/null
 
-    # weak basic test - not great for brand new sites in AppEngine - ~10-15 mins for new SSL certs to be issued and usable
-    echo "Checking HTTP status code for https://${HOSTNAME}/ ..."
-
-    response_code=$(curl -sSLk -o /dev/null -w "%{http_code}" https://"${HOSTNAME}"/)
-
-    if [[ ${response_code:0:1} == "4" ]] || [[ ${response_code:0:1} == "5" ]]; then
-        echo "-> [ERROR] Test FAILED - HTTP response code was ${response_code}"
-        exit 1
-    else 
-        echo "-> [INFO] Test PASSED - HTTP response code was ${response_code}"
-    fi
-    
 }
 
 main "${@:-}"
