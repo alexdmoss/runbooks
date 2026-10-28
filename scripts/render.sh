@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 set -euoE pipefail
 
-if [[ -z ${APP_ENGINE_PROJECT_ID:-} ]]; then echo "GCP Project not set"; exit 1; fi
-if [[ -z ${HOSTNAME:-} ]]; then echo "Hostname not set"; exit 1; fi
+# Runs on every branch, so it must not need the protected project variables.
 
 function main() {
 
     echo "-> [INFO] Building runbooks site ..."
 
-    git config --global --add safe.directory /builds/alexos-public/runbooks
+    # enableGitInfo needs git to trust the checkout in CI
+    git config --global --add safe.directory "${CI_PROJECT_DIR:-$(pwd)}"
 
-    pushd "$(dirname "${BASH_SOURCE[0]}")/src" >/dev/null
+    pushd "$(dirname "${BASH_SOURCE[0]}")/../src" >/dev/null
     mkdir -p ../app/www
     hugo --source .
     popd >/dev/null
     
     echo "-> [INFO] Checking expected HTML files rendered ..." 
 
-    pushd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null
+    pushd "$(dirname "${BASH_SOURCE[0]}")/.." >/dev/null
     
     markdown_files=$(find content -type f -name '*.md')
     error=0
