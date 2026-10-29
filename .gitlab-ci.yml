@@ -16,7 +16,7 @@ variables:
   HOSTNAME: runbooks.alexos.dev
   APP_ENGINE_PROJECT_ID: $MW_PROJECT_ID
   # renovate: datasource=github-releases depName=gohugoio/hugo
-  HUGO_VERSION: v0.147.3
+  HUGO_VERSION: v0.168.0
 
 # Runs on every branch: a theme or Hugo bump that breaks the render fails here.
 # Hugo is pinned here rather than taken from ci-tools, so a Hugo upgrade arrives
