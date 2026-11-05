@@ -1,4 +1,5 @@
 title: "Runbooks"
+baseURL: "/"
 languageCode: "en-gb"
 enableEmoji: true 
 enableGitInfo: true
